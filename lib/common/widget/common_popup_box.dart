@@ -60,87 +60,80 @@
 //   State<PopUpDialogWidget> createState() => _LoadingDialogBoxState();
 // }
 
-// class _LoadingDialogBoxState extends State<PopUpDialogWidget> {
-//   late Image image;
+import 'package:flutter/material.dart';
+import 'package:portfolioapp/app/text_style.dart';
+import 'package:portfolioapp/common/constant/assets.dart';
+import 'package:portfolioapp/common/utils/size_utils.dart';
+import 'package:portfolioapp/common/widget/common_image.dart';
+import 'package:portfolioapp/common/widget/custom_button.dart';
 
-//   @override
-//   void initState() {
-//     super.initState();
-//   }
+class ContainerWidget extends StatelessWidget {
+  final String imageUrl;
+  final String title;
+  final String description;
+  final String enableButtonName;
+  final String disableButtonName;
+  final VoidCallback? onEnablePressed;
+  final VoidCallback? onDisablePressed;
 
-//   @override
-//   void dispose() {
-//     image.image.evict();
-//     super.dispose();
-//   }
+  ContainerWidget({
+    this.imageUrl = Assets.locationImage,
+    this.title = "Title",
+    this.description = "Desc",
+    this.enableButtonName = "Enable",
+    this.disableButtonName = "Cancel",
+    this.onEnablePressed,
+    this.onDisablePressed,
+  });
 
-//   @override
-//   Widget build(BuildContext context) {
-//     final _theme = Theme.of(context);
-//     final _textTheme = _theme.textTheme;
-
-//     return WillPopScope(
-//       onWillPop: () => Future.value(false),
-//       child: Dialog(
-//         shape: RoundedRectangleBorder(
-//           borderRadius: BorderRadius.circular(30),
-//         ),
-//         child: Container(
-//           padding: EdgeInsets.symmetric(
-//             vertical: 30,
-//             horizontal: 15,
-//           ),
-//           child: Column(
-//             mainAxisSize: MainAxisSize.min,
-//             crossAxisAlignment: CrossAxisAlignment.center,
-//             children: [
-//               Text(
-//                 "${widget.title}",
-//                 style: _textTheme.titleLarge!.copyWith(
-//                   fontWeight: FontWeight.bold,
-//                 ),
-//               ),
-//               const SizedBox(height: 14),
-//               if (widget.isSuccessPopUp) image,
-//               if (widget.isSuccessPopUp) const SizedBox(height: 14),
-//               Text(
-//                 "${widget.message}",
-//                 textAlign: TextAlign.center,
-//                 style: _textTheme.titleLarge,
-//               ),
-//               const SizedBox(height: 20),
-//               Container(
-//                 width: MediaQuery.of(context).size.width,
-//                 child: Row(
-//                   children: [
-//                     if (widget.showCancelButton)
-//                       Expanded(
-//                         child: CustomRoundedButtom(
-//                           title: "Cancel",
-//                           color: Colors.white,
-//                           textColor: _theme.primaryColor,
-//                           onPressed: () {
-//                             NavigationService.pop();
-//                           },
-//                         ),
-//                       ),
-//                     if (widget.showCancelButton)
-//                       SizedBox(
-//                         width: 10,
-//                       ),
-//                     Expanded(
-//                       child: CustomRoundedButtom(
-//                         title: widget.buttonText ?? "",
-//                         onPressed: widget.buttonCallback,
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.all(20),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        color: Colors.white,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          CommonImage(
+            imageUrl: imageUrl,
+            height: 100.hp,
+          ),
+          SizedBox(height: 40.hp),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
+              children: [
+                Text(
+                  title,
+                  style: PoppinsTextStyles.titleMediumRegular,
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 5.hp),
+                Text(
+                  description,
+                  style: PoppinsTextStyles.subheadSmallRegular,
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(height: 20.hp),
+          CustomRoundedButtom(
+            onPressed: onEnablePressed,
+            title: enableButtonName,
+          ),
+          CustomRoundedButtom(
+            color: Colors.transparent,
+            onPressed: onDisablePressed,
+            title: disableButtonName,
+            textColor: Colors.black26,
+          ),
+        ],
+      ),
+    );
+  }
+}

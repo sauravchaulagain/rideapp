@@ -37,13 +37,13 @@ class PoppinsTextStyles {
     fontWeight: FontWeight.w400,
   );
 
-  // Title medium
+  //used already
   static TextStyle titleMediumRegular = TextStyle(
     fontSize: 24,
     height: 30 / 24,
     letterSpacing: 0,
     fontFamily: fontFamily,
-    color: Colors.red, // Placeholder, replace with desired color
+    color: Colors.black,
     fontWeight: FontWeight.w400,
   );
 
@@ -87,13 +87,13 @@ class PoppinsTextStyles {
     fontWeight: FontWeight.w400,
   );
 
-  // Subhead small
+  //used already
   static TextStyle subheadSmallRegular = TextStyle(
     fontSize: 14,
     height: 18 / 14,
     letterSpacing: 0,
     fontFamily: fontFamily,
-    color: Colors.black, // Placeholder, replace with desired color
+    color: Color(0xFFA0A0A0),
     fontWeight: FontWeight.w400,
   );
 

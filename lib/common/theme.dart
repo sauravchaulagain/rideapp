@@ -7,10 +7,10 @@ class CustomTheme {
   //live color
   // static const Color primaryColor = Color(0xFF010C80);
 
-  static const Color appColor = Color(0xFF52C498);
+  static const Color appColor = Color(0xFF008955);
 
   static const Color primaryColor = appColor;
-  
+
   static const Color secondaryColor = Color(0xFFF44336);
   static const Color lightColor = Color(0xFFfffff8);
   static const Color darkColor = Color(0xFF141414);

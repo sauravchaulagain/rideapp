@@ -12,7 +12,7 @@ class CustomRoundedButtom extends StatefulWidget {
     this.color,
     this.horizontalPadding = 12,
     this.verticalPadding = 12,
-    this.fontSize = 14,
+    this.fontSize = 16,
     this.textColor = Colors.white,
     this.borderColor = Colors.white,
     this.fontWeight = FontWeight.w700,
@@ -50,10 +50,10 @@ class CustomRoundedButtomState extends State<CustomRoundedButtom> {
         color: widget.isDisabled
             ? CustomTheme.lightGray
             : (widget.color ?? CustomTheme.primaryColor),
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(12),
         child: InkWell(
           onTap: widget.isDisabled ? null : widget.onPressed,
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(12),
           child: Container(
             padding: widget.padding ??
                 EdgeInsets.symmetric(
@@ -104,7 +104,7 @@ class CustomRoundedButtomState extends State<CustomRoundedButtom> {
               ),
             ),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(10),
               border: widget.isDisabled
                   ? null
                   : Border.all(
