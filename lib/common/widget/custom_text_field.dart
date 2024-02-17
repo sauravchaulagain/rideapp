@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:portfolioapp/app/text_style.dart';
 
 class ReusableTextField extends StatelessWidget {
   final String title;
@@ -19,12 +20,14 @@ class ReusableTextField extends StatelessWidget {
   final String? Function(String?)? validator;
   final Color? fillColor;
   final Color? borderColor;
+  final Function()? onTap;
+  final bool readOnly;
 
   const ReusableTextField({
     Key? key,
-    required this.title,
+    this.title = "",
     this.controller,
-    this.hintText,
+    required this.hintText,
     this.initialValue,
     this.keyboardType,
     this.obscureText = false,
@@ -38,60 +41,70 @@ class ReusableTextField extends StatelessWidget {
     this.defaultBorderDecoration,
     this.validator,
     this.fillColor,
-    this.borderColor = Colors.white, // Default border color to white
+    this.borderColor = Colors.white,
+    this.onTap,
+    this.readOnly = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          title,
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w400,
-            color: titleColor ?? Colors.black,
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.symmetric(vertical: 12),
-          decoration: BoxDecoration(
-              borderRadius: borderRadius ??
-                  defaultBorderDecoration?.borderRadius ??
-                  BorderRadius.circular(12),
-              border: Border.all(color: borderColor ?? Colors.white)),
-          child: TextFormField(
-            controller: controller,
-            decoration: InputDecoration(
-              fillColor: fillColor ??
-                  Colors.grey[200], // Use provided fill color or default
-              filled: true,
-              hintText: hintText,
-              hintStyle: TextStyle(
-                color: hintTextColor ?? Colors.grey[400],
-                fontSize: 14,
+    return InkWell(
+      onTap: onTap,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if (title.isNotEmpty)
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+                color: titleColor ?? Colors.black,
               ),
-              errorText:
-                  validator != null && validator!(controller!.text) != null
-                      ? validator!(controller!.text)
-                      : null,
-              border: OutlineInputBorder(
-                  borderRadius: borderRadius ??
-                      defaultBorderDecoration?.borderRadius ??
-                      BorderRadius.circular(12),
-                  borderSide: BorderSide.none),
-              suffixIcon: suffixIcon,
             ),
-            initialValue: initialValue,
-            keyboardType: keyboardType,
-            obscureText: obscureText,
-            onChanged: onChanged,
-            inputFormatters: inputFormatters,
-            validator: validator,
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 8),
+            decoration: BoxDecoration(
+                borderRadius: borderRadius ??
+                    defaultBorderDecoration?.borderRadius ??
+                    BorderRadius.circular(12),
+                border: Border.all(color: borderColor ?? Colors.white)),
+            child: TextFormField(
+              style: PoppinsTextStyles.bodyMediumRegular,
+              readOnly: readOnly,
+              controller: controller,
+              decoration: InputDecoration(
+                // fillColor: fillColor ??
+                //     Colors.grey[200], // Use provided fill color or default
+                // filled: true,
+                hintText: hintText,
+                hintStyle: TextStyle(
+                  color: hintTextColor ?? Colors.grey[400],
+                  fontSize: 16,
+                ),
+                errorText:
+                    validator != null && validator!(controller!.text) != null
+                        ? validator!(controller!.text)
+                        : null,
+                border:
+                    OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                // border: OutlineInputBorder(
+                //     borderRadius: borderRadius ??
+                //         defaultBorderDecoration?.borderRadius ??
+                //         BorderRadius.circular(12),
+                //     borderSide: BorderSide.none),
+                suffixIcon: suffixIcon,
+              ),
+              initialValue: initialValue,
+              keyboardType: keyboardType,
+              obscureText: obscureText,
+              onChanged: onChanged,
+              inputFormatters: inputFormatters,
+              validator: validator,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

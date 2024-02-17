@@ -5,7 +5,7 @@ import 'package:portfolioapp/common/theme.dart';
 import 'package:portfolioapp/app/text_style.dart';
 import 'package:portfolioapp/common/utils/size_utils.dart';
 import 'package:portfolioapp/common/widget/page_wrapper.dart';
-import 'package:portfolioapp/feature/auth/login/login_page.dart';
+import 'package:portfolioapp/feature/auth/permission_screen.dart';
 
 class OnBoardingPage extends StatefulWidget {
   @override
@@ -30,7 +30,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => LoginPage(),
+                        builder: (context) => PermissionPage(),
                       ));
                 },
                 child: Text(
@@ -83,7 +83,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => LoginPage(),
+                          builder: (context) => PermissionPage(),
                         ));
                   }
                 },

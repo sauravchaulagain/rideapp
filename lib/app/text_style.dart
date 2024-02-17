@@ -39,7 +39,7 @@ class PoppinsTextStyles {
 
   //used already
   static TextStyle titleMediumRegular = TextStyle(
-    fontSize: 24,
+    fontSize: 20,
     height: 30 / 24,
     letterSpacing: 0,
     fontFamily: fontFamily,
@@ -66,7 +66,15 @@ class PoppinsTextStyles {
     color: Colors.red, // Placeholder, replace with desired color
     fontWeight: FontWeight.w400,
   );
-
+// used already
+  static TextStyle headlineMediumRegular = TextStyle(
+    fontSize: 18,
+    height: 20 / 16,
+    letterSpacing: 0,
+    fontFamily: fontFamily,
+    color: Colors.black,
+    fontWeight: FontWeight.w500,
+  );
   // Headline small
   static TextStyle headlineSmallRegular = TextStyle(
     fontSize: 18,

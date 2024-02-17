@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:portfolioapp/common/widget/appbar/common_appbar.dart';
 
 class PageWrapper extends StatefulWidget {
-  final bool useOwnAppBar;
   final String? appbarTitle;
   final Widget body;
   final bool useOwnScaffold;
@@ -22,7 +21,6 @@ class PageWrapper extends StatefulWidget {
   final Function()? onBackPressed;
   final bool showBackButton;
   PageWrapper({
-    this.useOwnAppBar = false,
     required this.body,
     this.showBackButton = false,
     this.useOwnScaffold = false,
@@ -58,12 +56,10 @@ class _PageWrapperState extends State<PageWrapper> {
         bottomNavigationBar: widget.bottomNavBar,
         floatingActionButtonLocation: widget.floatingActionButtonLocation,
         appBar: widget.showAppBar
-            ? (widget.useOwnAppBar
-                ? CustomAppBar(
-                    showBackButton: widget.showBackButton,
-                    title: widget.appbarTitle ?? "",
-                  )
-                : widget.appBar)
+            ? CustomAppBar(
+                showBackButton: widget.showBackButton,
+                title: widget.appbarTitle ?? "",
+              )
             : null,
         body: Container(
           padding: widget.padding ??

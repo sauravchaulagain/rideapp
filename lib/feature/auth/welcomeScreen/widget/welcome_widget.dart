@@ -1,11 +1,82 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:portfolioapp/app/text_style.dart';
+import 'package:portfolioapp/common/constant/assets.dart';
+import 'package:portfolioapp/common/theme.dart';
+import 'package:portfolioapp/common/utils/size_utils.dart';
+import 'package:portfolioapp/common/widget/common_container.dart';
+import 'package:portfolioapp/common/widget/custom_button.dart';
+import 'package:portfolioapp/common/widget/page_wrapper.dart';
+import 'package:portfolioapp/feature/auth/register/screen/signup_page.dart';
 
 class WelcomeWidget extends StatelessWidget {
   const WelcomeWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return PageWrapper(
+      padding: EdgeInsets.all(22),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: _buildPage(
+                imageAsset: Assets.welcomeScreenImage,
+                title: "Welcome",
+                description: "Have a better sharing experience",
+              ),
+            ),
+            CustomRoundedButtom(
+              title: "Create an account",
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SignUpPage(),
+                    ));
+              },
+            ),
+            SizedBox(height: 20.hp),
+            CustomRoundedButtom(
+              color: Colors.transparent,
+              title: "Login",
+              textColor: CustomTheme.primaryColor,
+              borderColor: CustomTheme.primaryColor,
+              onPressed: () {},
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPage(
+      {required String imageAsset,
+      required String title,
+      required String description}) {
+    return Column(
+      children: [
+        Image.asset(imageAsset),
+        Padding(
+          padding: const EdgeInsets.all(56.0),
+          child: Column(
+            children: [
+              Text(
+                title,
+                style: PoppinsTextStyles.titleMediumRegular
+                    .copyWith(color: CustomTheme.darkerBlack),
+              ),
+              SizedBox(height: 10.hp),
+              Text(
+                description,
+                style: PoppinsTextStyles.subheadSmallRegular,
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
   }
 }

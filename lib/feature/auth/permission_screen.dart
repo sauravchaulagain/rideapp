@@ -4,15 +4,16 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:portfolioapp/common/constant/assets.dart';
 import 'package:portfolioapp/common/widget/common_popup_box.dart';
 import 'package:portfolioapp/common/widget/page_wrapper.dart';
+import 'package:portfolioapp/feature/auth/welcomeScreen/screen/welcome_page.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class PermissionPage extends StatefulWidget {
+  const PermissionPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<PermissionPage> createState() => _PermissionPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _PermissionPageState extends State<PermissionPage> {
   @override
   Widget build(BuildContext context) {
     return PageWrapper(
@@ -33,8 +34,20 @@ class _LoginPageState extends State<LoginPage> {
               description:
                   "Choose your location to start find the request around you",
               disableButtonName: "Skip for now",
-              onDisablePressed: () {},
-              onEnablePressed: () {},
+              onDisablePressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WelcomePage(),
+                    ));
+              },
+              onEnablePressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WelcomePage(),
+                    ));
+              },
               enableButtonName: "Enable",
               imageUrl: Assets.locationImage,
             ),
