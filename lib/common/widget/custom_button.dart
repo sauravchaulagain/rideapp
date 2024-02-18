@@ -19,6 +19,7 @@ class CustomRoundedButtom extends StatefulWidget {
     this.horizontalMargin = 0,
     this.icon,
     this.iconColor,
+    this.verticalMargin = 12,
   }) : super(key: key);
   final String title;
   final Function()? onPressed;
@@ -32,6 +33,8 @@ class CustomRoundedButtom extends StatefulWidget {
   final Color? textColor;
   final FontWeight fontWeight;
   final double horizontalMargin;
+  final double verticalMargin;
+
   final IconData? icon;
   final Color? iconColor;
   final Color? borderColor;
@@ -43,9 +46,10 @@ class CustomRoundedButtom extends StatefulWidget {
 class CustomRoundedButtomState extends State<CustomRoundedButtom> {
   @override
   Widget build(BuildContext context) {
-    final _theme = Theme.of(context);
+    final theme = Theme.of(context);
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: widget.horizontalMargin),
+      padding: EdgeInsets.symmetric(
+          horizontal: widget.horizontalMargin, vertical: widget.verticalMargin),
       child: Material(
         color: widget.isDisabled
             ? CustomTheme.lightGray
@@ -60,6 +64,14 @@ class CustomRoundedButtomState extends State<CustomRoundedButtom> {
                   vertical: widget.verticalPadding,
                   horizontal: widget.horizontalPadding,
                 ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: widget.isDisabled
+                  ? null
+                  : Border.all(
+                      color: widget.borderColor ?? CustomTheme.primaryColor,
+                    ),
+            ),
             child: Center(
               child: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -67,7 +79,7 @@ class CustomRoundedButtomState extends State<CustomRoundedButtom> {
                 children: [
                   Text(
                     widget.title,
-                    style: _theme.textTheme.displaySmall!.copyWith(
+                    style: theme.textTheme.displaySmall!.copyWith(
                       fontWeight: widget.fontWeight,
                       color: widget.isDisabled
                           ? CustomTheme.gray
@@ -77,7 +89,7 @@ class CustomRoundedButtomState extends State<CustomRoundedButtom> {
                   ),
                   if (widget.icon != null)
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 4),
+                      padding: const EdgeInsets.symmetric(horizontal: 4),
                       child: Icon(
                         widget.icon,
                         color: widget.iconColor ?? Colors.white,
@@ -102,14 +114,6 @@ class CustomRoundedButtomState extends State<CustomRoundedButtom> {
                   ),
                 ],
               ),
-            ),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              border: widget.isDisabled
-                  ? null
-                  : Border.all(
-                      color: widget.borderColor ?? CustomTheme.primaryColor,
-                    ),
             ),
           ),
         ),

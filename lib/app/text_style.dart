@@ -18,7 +18,7 @@ class PoppinsTextStyles {
   static const String fontFamily = 'Poppins';
 
   // Title xlarge
-  static TextStyle titleXLargeRegular = TextStyle(
+  static TextStyle titleXLargeRegular = const TextStyle(
     fontSize: 34,
     height: 41 / 34,
     letterSpacing: 0,
@@ -28,7 +28,7 @@ class PoppinsTextStyles {
   );
 
   // Title large
-  static TextStyle titleLargeRegular = TextStyle(
+  static TextStyle titleLargeRegular = const TextStyle(
     fontSize: 28,
     height: 34 / 28,
     letterSpacing: 0,
@@ -38,7 +38,7 @@ class PoppinsTextStyles {
   );
 
   //used already
-  static TextStyle titleMediumRegular = TextStyle(
+  static TextStyle titleMediumRegular = const TextStyle(
     fontSize: 20,
     height: 30 / 24,
     letterSpacing: 0,
@@ -48,7 +48,7 @@ class PoppinsTextStyles {
   );
 
   // Title small
-  static TextStyle titleSmallRegular = TextStyle(
+  static TextStyle titleSmallRegular = const TextStyle(
     fontSize: 22,
     height: 30 / 22,
     letterSpacing: 0,
@@ -58,7 +58,7 @@ class PoppinsTextStyles {
   );
 
   // Headline large
-  static TextStyle headlineLargeRegular = TextStyle(
+  static TextStyle headlineLargeRegular = const TextStyle(
     fontSize: 20,
     height: 26 / 20,
     letterSpacing: 0,
@@ -67,7 +67,7 @@ class PoppinsTextStyles {
     fontWeight: FontWeight.w400,
   );
 // used already
-  static TextStyle headlineMediumRegular = TextStyle(
+  static TextStyle headlineMediumRegular = const TextStyle(
     fontSize: 18,
     height: 20 / 16,
     letterSpacing: 0,
@@ -76,7 +76,7 @@ class PoppinsTextStyles {
     fontWeight: FontWeight.w500,
   );
   // Headline small
-  static TextStyle headlineSmallRegular = TextStyle(
+  static TextStyle headlineSmallRegular = const TextStyle(
     fontSize: 18,
     height: 24 / 18,
     letterSpacing: 0,
@@ -86,7 +86,7 @@ class PoppinsTextStyles {
   );
 
   // Subhead large
-  static TextStyle subheadLargeRegular = TextStyle(
+  static TextStyle subheadLargeRegular = const TextStyle(
     fontSize: 16,
     height: 20 / 16,
     letterSpacing: 0,
@@ -96,7 +96,7 @@ class PoppinsTextStyles {
   );
 
   //used already
-  static TextStyle subheadSmallRegular = TextStyle(
+  static TextStyle subheadSmallRegular = const TextStyle(
     fontSize: 14,
     height: 18 / 14,
     letterSpacing: 0,
@@ -106,7 +106,7 @@ class PoppinsTextStyles {
   );
 
   // Body large
-  static TextStyle bodyLargeRegular = TextStyle(
+  static TextStyle bodyLargeRegular = const TextStyle(
     fontSize: 16,
     height: 24 / 16,
     letterSpacing: 0,
@@ -116,7 +116,7 @@ class PoppinsTextStyles {
   );
 
   // Body medium
-  static TextStyle bodyMediumRegular = TextStyle(
+  static TextStyle bodyMediumRegular = const TextStyle(
     fontSize: 14,
     height: 22 / 14,
     letterSpacing: 0,
@@ -126,7 +126,7 @@ class PoppinsTextStyles {
   );
 
   // Body small
-  static TextStyle bodySmallRegular = TextStyle(
+  static TextStyle bodySmallRegular = const TextStyle(
     fontSize: 12,
     height: 18 / 12,
     letterSpacing: 0,
@@ -136,7 +136,7 @@ class PoppinsTextStyles {
   );
 
   // Label large
-  static TextStyle labelLargeRegular = TextStyle(
+  static TextStyle labelLargeRegular = const TextStyle(
     fontSize: 16,
     height: 24 / 16,
     letterSpacing: 0,
@@ -146,7 +146,7 @@ class PoppinsTextStyles {
   );
 
   // Label medium
-  static TextStyle labelMediumRegular = TextStyle(
+  static TextStyle labelMediumRegular = const TextStyle(
     fontSize: 14,
     height: 18 / 14,
     letterSpacing: 0,
@@ -156,7 +156,7 @@ class PoppinsTextStyles {
   );
 
   // Label small
-  static TextStyle labelSmallRegular = TextStyle(
+  static TextStyle labelSmallRegular = const TextStyle(
     fontSize: 12,
     height: 16 / 12,
     letterSpacing: 0,
@@ -166,7 +166,7 @@ class PoppinsTextStyles {
   );
 
   // Caption
-  static TextStyle captionRegular = TextStyle(
+  static TextStyle captionRegular = const TextStyle(
     fontSize: 12,
     height: 16 / 12,
     letterSpacing: 0,
