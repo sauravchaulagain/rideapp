@@ -59,4 +59,13 @@ class Assets {
   static const String atAnytimeImage = "assets/images/At anytime.png";
   static const String anywhereYouAreImage =
       "assets/images/Anywhere you are.png";
+
+  //select Transaport
+  static const String carImage = "assets/images/Car.png";
+  static const String bikeImage = "assets/images/Bike.png";
+  static const String cycleImage = "assets/images/Cycle.png";
+  static const String taxiImage = "assets/images/Taxi.png";
+
+  //cars lsit
+  static const String bmwCario = "assets/images/cars/image 6.png";
 }

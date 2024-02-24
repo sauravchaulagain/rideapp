@@ -11,18 +11,17 @@ class CommonContainer extends StatelessWidget {
   final String buttonName;
   final String detail;
   final bool showBackBotton;
-  final bool showRoundBotton;
   final double verticalPadding;
   final double horizontalPadding;
   final EdgeInsets? padding;
   final String appBarTitle;
   final Function()? onButtonPressed;
   const CommonContainer({
+    super.key,
     this.verticalPadding = 20.0,
     this.horizontalPadding = 20.0,
     this.showBackBotton = true,
-    this.buttonName = "Button Name",
-    this.showRoundBotton = true,
+    this.buttonName = "",
     required this.body,
     this.onButtonPressed,
     this.title = "",
@@ -32,13 +31,13 @@ class CommonContainer extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    final _theme = Theme.of(context);
-    final _textTheme = _theme.textTheme;
-    final _height = SizeUtils.height;
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+    final height = SizeUtils.height;
 
     return PageWrapper(
       padding: padding ??
-          EdgeInsets.symmetric(
+          const EdgeInsets.symmetric(
             horizontal: CustomTheme.symmetricHozPadding,
           ),
       appbarTitle: appBarTitle,
@@ -71,17 +70,17 @@ class CommonContainer extends StatelessWidget {
                           if (detail.isNotEmpty)
                             Text(
                               detail,
-                              style: _textTheme.titleLarge,
+                              style: textTheme.titleLarge,
                             )
                         ],
                       ),
                     ),
                   ],
                 ),
-                SizedBox(height: _height * 0.01),
+                SizedBox(height: height * 0.01),
                 body,
-                SizedBox(height: _height * 0.03),
-                if (showRoundBotton)
+                SizedBox(height: height * 0.03),
+                if (buttonName.isNotEmpty)
                   CustomRoundedButtom(
                       title: buttonName, onPressed: onButtonPressed)
               ],

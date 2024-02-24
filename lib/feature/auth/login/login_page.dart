@@ -21,7 +21,6 @@ class _LopginWidget extends State<LopginWidget> {
   @override
   Widget build(BuildContext context) {
     return CommonContainer(
-      showRoundBotton: false,
       appBarTitle: "Sign Up",
       title: "Sign in with your email or phone number",
       body: Column(

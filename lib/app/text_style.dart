@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:portfolioapp/common/theme.dart';
 
 class PoppinsTextStyles {
   // Color constants
-  static const Color primaryColor = Color(0xFFFB8A00); // Orange600
+  static const Color primaryColor = CustomTheme.appColor;
   static const Color accentColor = Color(0xFFFB8A00); // Orange600
   static const Color blue500 = Color(0xFF2196F3); // Blue500
   static const Color red500 = Color(0xFFF44336); // Red500
@@ -145,13 +146,13 @@ class PoppinsTextStyles {
     fontWeight: FontWeight.w400,
   );
 
-  // Label medium
+  // used already
   static TextStyle labelMediumRegular = const TextStyle(
     fontSize: 14,
     height: 18 / 14,
     letterSpacing: 0,
     fontFamily: fontFamily,
-    color: primaryColor,
+    color: CustomTheme.darkColor,
     fontWeight: FontWeight.w400,
   );
 

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:portfolioapp/common/constant/assets.dart';
 import 'package:portfolioapp/common/theme.dart';
+import 'package:portfolioapp/common/widget/common_dialogue_box.dart';
 import 'package:portfolioapp/common/widget/custom_button.dart';
+import 'package:portfolioapp/common/widget/custom_text_field.dart';
 import 'package:portfolioapp/common/widget/page_wrapper.dart';
 import 'package:portfolioapp/feature/dashboard/homeScreen/widget/home_page_topbar.dart';
+import 'package:portfolioapp/feature/rideFlow/selectTransport/select_transport_widget.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({super.key});
@@ -39,7 +42,25 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 icon: Icons.search_sharp,
                 iconColor: CustomTheme.darkColor,
                 title: "Where would you go?",
-                onPressed: () {},
+                onPressed: () {
+                  showPopUpDialog(
+                      buttonName: "Proceed",
+                      buttonCallback: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SelectTransportWidget(),
+                            ));
+                      },
+                      context: context,
+                      title: "Select Address",
+                      body: Column(
+                        children: const [
+                          ReusableTextField(hintText: "Form"),
+                          ReusableTextField(hintText: "To"),
+                        ],
+                      ));
+                },
                 textColor: CustomTheme.darkColor.withOpacity(0.4),
                 color: CustomTheme.lightColor.withOpacity(0.7),
               ),
