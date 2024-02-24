@@ -68,4 +68,7 @@ class Assets {
 
   //cars lsit
   static const String bmwCario = "assets/images/cars/image 6.png";
+
+//images
+  static const String successAlertImage = "assets/images/success_alert.png";
 }

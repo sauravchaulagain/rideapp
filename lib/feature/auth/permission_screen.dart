@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:portfolioapp/common/constant/assets.dart';
 import 'package:portfolioapp/common/widget/common_popup_box.dart';
 import 'package:portfolioapp/common/widget/page_wrapper.dart';
@@ -21,7 +19,7 @@ class _PermissionPageState extends State<PermissionPage> {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(Assets.mapImage),
+              image: const AssetImage(Assets.mapImage),
               colorFilter: ColorFilter.mode(
                   Colors.black.withOpacity(0.5), BlendMode.srcATop)),
         ),
@@ -29,7 +27,7 @@ class _PermissionPageState extends State<PermissionPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ContainerWidget(
+            PopUpDialogWidget(
               title: "Enable your location",
               description:
                   "Choose your location to start find the request around you",
@@ -38,14 +36,14 @@ class _PermissionPageState extends State<PermissionPage> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => WelcomePage(),
+                      builder: (context) => const WelcomePage(),
                     ));
               },
               onEnablePressed: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => WelcomePage(),
+                      builder: (context) => const WelcomePage(),
                     ));
               },
               enableButtonName: "Enable",
