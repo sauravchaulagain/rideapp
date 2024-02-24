@@ -5,6 +5,7 @@ import 'package:portfolioapp/common/widget/common_container.dart';
 import 'package:portfolioapp/common/widget/custom_button.dart';
 import 'package:portfolioapp/common/widget/custom_text_field.dart';
 import 'package:portfolioapp/feature/auth/register/screen/signup_page.dart';
+import 'package:portfolioapp/feature/dashboard/dashboard_widget.dart';
 
 class LopginWidget extends StatefulWidget {
   const LopginWidget({super.key});
@@ -33,7 +34,15 @@ class _LopginWidget extends State<LopginWidget> {
             controller: passwordController,
             hintText: "Password",
           ),
-          CustomRoundedButtom(title: "Sign Up", onPressed: () {}),
+          CustomRoundedButtom(
+              title: "Sign Up",
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const DashboardWidget(),
+                    ));
+              }),
           Stack(
             alignment: Alignment.center,
             children: [
