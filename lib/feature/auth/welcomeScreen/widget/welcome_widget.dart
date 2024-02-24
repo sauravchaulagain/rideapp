@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:portfolioapp/app/text_style.dart';
 import 'package:portfolioapp/common/constant/assets.dart';
 import 'package:portfolioapp/common/theme.dart';
 import 'package:portfolioapp/common/utils/size_utils.dart';
-import 'package:portfolioapp/common/widget/common_container.dart';
 import 'package:portfolioapp/common/widget/custom_button.dart';
 import 'package:portfolioapp/common/widget/page_wrapper.dart';
+import 'package:portfolioapp/feature/auth/login/login_page.dart';
 import 'package:portfolioapp/feature/auth/register/screen/signup_page.dart';
 
 class WelcomeWidget extends StatelessWidget {
@@ -16,7 +14,7 @@ class WelcomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PageWrapper(
-      padding: EdgeInsets.all(22),
+      padding: const EdgeInsets.all(22),
       body: SafeArea(
         child: Column(
           children: [
@@ -33,7 +31,7 @@ class WelcomeWidget extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SignUpPage(),
+                      builder: (context) => const SignUpPage(),
                     ));
               },
             ),
@@ -43,7 +41,13 @@ class WelcomeWidget extends StatelessWidget {
               title: "Login",
               textColor: CustomTheme.primaryColor,
               borderColor: CustomTheme.primaryColor,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LopginWidget(),
+                    ));
+              },
             ),
           ],
         ),
