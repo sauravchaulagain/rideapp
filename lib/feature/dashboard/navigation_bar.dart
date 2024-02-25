@@ -1,67 +1,91 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolioapp/common/constant/assets.dart';
-import 'package:portfolioapp/common/theme.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter_svg/svg.dart';
+// import 'package:portfolioapp/common/constant/assets.dart';
+// import 'package:portfolioapp/common/theme.dart';
 
-class NavBar extends StatelessWidget {
-  final int pageIndex;
-  final Function(int) onTap;
+// class CustomBottomNavBar extends StatefulWidget {
+//   final int selectedIndex;
+//   final onItemTapped;
+//   const CustomBottomNavBar(
+//       {super.key, required this.selectedIndex, this.onItemTapped});
 
-  const NavBar({
-    super.key,
-    required this.pageIndex,
-    required this.onTap,
-  });
+//   @override
+//   _CustomBottomNavBarState createState() => _CustomBottomNavBarState();
+// }
 
-  @override
-  Widget build(BuildContext context) {
-    return BottomAppBar(
-      elevation: 0.0,
-      child: Container(
-        height: 60,
-        decoration: const BoxDecoration(
-          color: CustomTheme.lightColor,
-          borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(18), topRight: Radius.circular(18)),
-        ),
-        child: Row(
-          children: [
-            navItem(
-              Assets.houseFillIcon,
-              pageIndex == 0,
-              onTap: () => onTap(0),
-            ),
-            navItem(
-              Assets.heartIcon,
-              pageIndex == 1,
-              onTap: () => onTap(1),
-            ),
-            const SizedBox(width: 80),
-            navItem(
-              Assets.discountIcon,
-              pageIndex == 2,
-              onTap: () => onTap(2),
-            ),
-            navItem(
-              Assets.userIcon,
-              pageIndex == 3,
-              onTap: () => onTap(3),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget navItem(String icon, bool selected, {Function()? onTap}) {
-    return Expanded(
-      child: InkWell(
-        onTap: onTap,
-        child: SvgPicture.asset(
-          icon,
-          color: selected ? CustomTheme.appColor : CustomTheme.darkColor,
-        ),
-      ),
-    );
-  }
-}
+// class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       decoration: BoxDecoration(
+//         borderRadius: BorderRadius.circular(18),
+//         color: CustomTheme.lightColor,
+//       ),
+//       padding: const EdgeInsets.all(8),
+//       child: BottomNavigationBar(
+//         elevation: 0,
+//         unselectedFontSize: 12,
+//         unselectedItemColor: CustomTheme.darkColor.withOpacity(0.7),
+//         showUnselectedLabels: true,
+//         selectedFontSize: 13,
+//         selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w500),
+//         items: <BottomNavigationBarItem>[
+//           BottomNavigationBarItem(
+//             icon: SvgPicture.asset(
+//                 widget.selectedIndex == 0
+//                     ? Assets.houseFillIcon
+//                     : Assets.houseIcon,
+//                 color: widget.selectedIndex == 0
+//                     ? CustomTheme.appColor
+//                     : CustomTheme.darkColor.withOpacity(0.7),
+//                 width: 30),
+//             label: 'Home',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: SvgPicture.asset(
+//                 widget.selectedIndex == 1
+//                     ? Assets.heartFillIcon
+//                     : Assets.heartIcon,
+//                 color: widget.selectedIndex == 1
+//                     ? CustomTheme.appColor
+//                     : CustomTheme.darkColor.withOpacity(0.7),
+//                 width: 30),
+//             label: 'Favourite',
+//           ),
+//           const BottomNavigationBarItem(
+//             icon: SizedBox(
+//               width: 30,
+//               height: 30,
+//             ),
+//             label: 'Wallet',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: SvgPicture.asset(
+//                 widget.selectedIndex == 3
+//                     ? Assets.discountFillIcon
+//                     : Assets.discountIcon,
+//                 color: widget.selectedIndex == 3
+//                     ? CustomTheme.appColor
+//                     : CustomTheme.darkColor.withOpacity(0.7),
+//                 width: 30),
+//             label: 'Offer',
+//           ),
+//           BottomNavigationBarItem(
+//             icon: SvgPicture.asset(
+//                 widget.selectedIndex == 4
+//                     ? Assets.userFillIcon
+//                     : Assets.userIcon,
+//                 color: widget.selectedIndex == 4
+//                     ? CustomTheme.appColor
+//                     : CustomTheme.darkColor.withOpacity(0.7),
+//                 width: 30),
+//             label: 'Discount',
+//           ),
+//         ],
+//         currentIndex: widget.selectedIndex,
+//         onTap: widget.onItemTapped,
+//         selectedItemColor: Colors.green,
+//       ),
+//     );
+//   }
+// }

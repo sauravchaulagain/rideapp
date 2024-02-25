@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolioapp/app/models/nav_bar_model.dart';
 import 'package:portfolioapp/common/constant/assets.dart';
 import 'package:portfolioapp/common/theme.dart';
 import 'package:portfolioapp/feature/dashboard/favourite/favourite_widget.dart';
 import 'package:portfolioapp/feature/dashboard/homeScreen/home_page_widget.dart';
-import 'package:portfolioapp/feature/dashboard/navigation_bar.dart';
 import 'package:portfolioapp/feature/dashboard/offer/offer_widget.dart';
 import 'package:portfolioapp/feature/dashboard/profile/profile_widget.dart';
+import 'package:portfolioapp/feature/dashboard/wallet/wallet_widget.dart';
 
 class DashboardWidget extends StatefulWidget {
   const DashboardWidget({super.key});
@@ -17,92 +16,113 @@ class DashboardWidget extends StatefulWidget {
 }
 
 class _DashboardWidgetState extends State<DashboardWidget> {
-  final homeNavKey = GlobalKey<NavigatorState>();
-  final searchNavKey = GlobalKey<NavigatorState>();
-  final offerNavKey = GlobalKey<NavigatorState>();
-  final profileNavKey = GlobalKey<NavigatorState>();
-  int selectedTab = 0;
-  List<NavModel> items = [];
-  @override
-  void initState() {
-    super.initState();
-    items = [
-      NavModel(
-        page: HomePageWidget(),
-        navKey: homeNavKey,
-      ),
-      NavModel(
-        page: const FavouriteWidget(),
-        navKey: searchNavKey,
-      ),
-      NavModel(
-        page: const OfferWidget(),
-        navKey: offerNavKey,
-      ),
-      NavModel(
-        page: const ProfileWidget(),
-        navKey: profileNavKey,
-      ),
-    ];
+  int _selectedIndex = 0;
+  _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
   }
+
+  List pages = [
+    const HomePageWidget(),
+    const FavouriteWidget(),
+    const WalletWidget(),
+    const OfferWidget(),
+    const ProfileWidget(),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () {
-        if (items[selectedTab].navKey.currentState?.canPop() ?? false) {
-          items[selectedTab].navKey.currentState?.pop();
-          return Future.value(false);
-        } else {
-          return Future.value(true);
-        }
-      },
-      child: Scaffold(
-        backgroundColor: CustomTheme.lightColor,
-        body: SafeArea(
-          child: IndexedStack(
-            index: selectedTab,
-            children: items
-                .map((page) => Navigator(
-                      key: page.navKey,
-                      onGenerateInitialRoutes: (navigator, initialRoute) {
-                        return [
-                          MaterialPageRoute(builder: (context) => page.page)
-                        ];
-                      },
-                    ))
-                .toList(),
-          ),
+    return Scaffold(
+      backgroundColor: CustomTheme.lightColor,
+      body: SafeArea(
+        child: Center(
+          child: pages.elementAt(_selectedIndex),
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: Container(
-          margin: const EdgeInsets.only(top: 10),
-          height: 64,
-          width: 64,
-          child: FloatingActionButton(
-            backgroundColor: CustomTheme.appColor,
-            elevation: 0,
-            onPressed: () => debugPrint("Add Button pressed"),
-            child: SvgPicture.asset(
-              Assets.walletIcon,
-              color: CustomTheme.lightColor,
+      ),
+      bottomSheet: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(18),
+          color: CustomTheme.lightColor,
+        ),
+        padding: const EdgeInsets.all(8),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          elevation: 0,
+          unselectedFontSize: 12,
+          unselectedItemColor: CustomTheme.darkColor.withOpacity(0.7),
+          showUnselectedLabels: true,
+          selectedFontSize: 13,
+          selectedLabelStyle: const TextStyle(fontWeight: FontWeight.w500),
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                  _selectedIndex == 0 ? Assets.houseFillIcon : Assets.houseIcon,
+                  color: _selectedIndex == 0
+                      ? CustomTheme.appColor
+                      : CustomTheme.darkColor.withOpacity(0.7),
+                  width: 30),
+              label: 'Home',
             ),
-          ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                  _selectedIndex == 1 ? Assets.heartFillIcon : Assets.heartIcon,
+                  color: _selectedIndex == 1
+                      ? CustomTheme.appColor
+                      : CustomTheme.darkColor.withOpacity(0.7),
+                  width: 30),
+              label: 'Favourite',
+            ),
+            const BottomNavigationBarItem(
+              icon: SizedBox(
+                width: 30,
+                height: 30,
+              ),
+              label: 'Wallet',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                  _selectedIndex == 3
+                      ? Assets.discountFillIcon
+                      : Assets.discountIcon,
+                  color: _selectedIndex == 3
+                      ? CustomTheme.appColor
+                      : CustomTheme.darkColor.withOpacity(0.7),
+                  width: 30),
+              label: 'Offer',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                  _selectedIndex == 4 ? Assets.userFillIcon : Assets.userIcon,
+                  color: _selectedIndex == 4
+                      ? CustomTheme.appColor
+                      : CustomTheme.darkColor.withOpacity(0.7),
+                  width: 30),
+              label: 'Discount',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+          selectedItemColor: Colors.green,
         ),
-        bottomNavigationBar: NavBar(
-          pageIndex: selectedTab,
-          onTap: (index) {
-            if (index == selectedTab) {
-              items[index]
-                  .navKey
-                  .currentState
-                  ?.popUntil((route) => route.isFirst);
-            } else {
-              setState(() {
-                selectedTab = index;
-              });
-            }
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Container(
+        margin: const EdgeInsets.only(top: 10),
+        height: 64,
+        width: 64,
+        child: FloatingActionButton(
+          backgroundColor: CustomTheme.appColor,
+          elevation: 0,
+          onPressed: () {
+            setState(() {
+              _selectedIndex = 2;
+            });
           },
+          child: SvgPicture.asset(
+            Assets.walletIcon,
+            color: CustomTheme.lightColor,
+          ),
         ),
       ),
     );
