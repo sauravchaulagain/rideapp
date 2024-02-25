@@ -1,11 +1,142 @@
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:portfolioapp/app/text_style.dart';
+import 'package:portfolioapp/common/constant/assets.dart';
+import 'package:portfolioapp/common/theme.dart';
+import 'package:portfolioapp/common/utils/size_utils.dart';
+import 'package:portfolioapp/common/widget/common_container.dart';
 
 class WalletWidget extends StatelessWidget {
   const WalletWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return CommonContainer(
+      appBarTitle: "Wallet",
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Container(
+                  height: SizeUtils.width / 3,
+                  decoration: BoxDecoration(
+                    color: CustomTheme.appColor.withOpacity(0.08),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: CustomTheme.appColor),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        "\$500",
+                        style: PoppinsTextStyles.titleMediumRegular,
+                      ),
+                      Text(
+                        "Available Balance",
+                        style: PoppinsTextStyles.subheadSmallRegular
+                            .copyWith(color: CustomTheme.darkColor),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(width: 30.wp),
+              Expanded(
+                child: Container(
+                  height: SizeUtils.width / 3,
+                  decoration: BoxDecoration(
+                    color: CustomTheme.appColor.withOpacity(0.08),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: CustomTheme.appColor),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        "\$200",
+                        style: PoppinsTextStyles.titleMediumRegular,
+                      ),
+                      Text(
+                        "Total Expend",
+                        style: PoppinsTextStyles.subheadSmallRegular
+                            .copyWith(color: CustomTheme.darkColor),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(height: 20.hp),
+          Text(
+            "Transaction",
+            style: PoppinsTextStyles.subheadLargeRegular.copyWith(
+              fontWeight: FontWeight.w600,
+              color: CustomTheme.darkColor,
+            ),
+          ),
+          ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            scrollDirection: Axis.vertical,
+            itemCount: 15,
+            itemBuilder: (context, index) {
+              return Container(
+                padding: const EdgeInsets.symmetric(vertical: 8),
+                margin: const EdgeInsets.symmetric(vertical: 8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: CustomTheme.appColor.withOpacity(0.5),
+                  ),
+                ),
+                child: ListTile(
+                    leading: Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: index.isEven
+                            ? const Color(0xFFFFCDD2)
+                            : const Color(0xFFC8E6C9),
+                      ),
+                      child: SvgPicture.asset(
+                        index.isEven ? Assets.upIcon : Assets.downIcon,
+                        color: index.isEven
+                            ? const Color(0xFFD32F2F)
+                            : const Color(0xFF388E3D),
+                      ),
+                    ),
+                    title: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Welton",
+                            style:
+                                PoppinsTextStyles.subheadLargeRegular.copyWith(
+                              fontWeight: FontWeight.w600,
+                              color: CustomTheme.darkColor,
+                            ),
+                          ),
+                          Text(
+                            "Today at 09:20 am",
+                            style: PoppinsTextStyles.bodyMediumRegular
+                                .copyWith(fontSize: 12),
+                          )
+                        ]),
+                    trailing: Text(
+                      "${index.isEven ? "" : "-"}\$570.00",
+                      style: PoppinsTextStyles.subheadLargeRegular.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: CustomTheme.darkColor,
+                      ),
+                    )),
+              );
+            },
+          ),
+        ],
+      ),
+    );
   }
 }
