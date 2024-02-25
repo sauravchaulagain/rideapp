@@ -11,7 +11,7 @@ class CustomTheme {
 
   static const Color primaryColor = appColor;
 
-  static const Color secondaryColor = Color(0xFFF44336);
+  static const Color secondaryColor = Color(0xFFE2F5ED);
   static const Color lightColor = Color(0xFFffffff);
   static const Color darkColor = Color(0xFF141414);
   static const double symmetricHozPadding = 13.0;

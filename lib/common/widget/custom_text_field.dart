@@ -22,6 +22,7 @@ class ReusableTextField extends StatelessWidget {
   final Color? borderColor;
   final VoidCallback? onTap;
   final bool readOnly;
+  final AutovalidateMode? autovalidateMode;
 
   const ReusableTextField({
     Key? key,
@@ -43,6 +44,7 @@ class ReusableTextField extends StatelessWidget {
     this.fillColor,
     this.borderColor = Colors.white,
     this.onTap,
+    this.autovalidateMode = AutovalidateMode.onUserInteraction,
     this.readOnly = false,
   }) : super(key: key);
 
@@ -64,7 +66,7 @@ class ReusableTextField extends StatelessWidget {
                 ),
               ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 8),
+              margin: const EdgeInsets.symmetric(vertical: 8),
               decoration: BoxDecoration(
                 borderRadius: borderRadius ??
                     defaultBorderDecoration?.borderRadius ??
@@ -72,6 +74,7 @@ class ReusableTextField extends StatelessWidget {
                 border: Border.all(color: borderColor ?? Colors.white),
               ),
               child: TextFormField(
+                autovalidateMode: autovalidateMode,
                 style: PoppinsTextStyles.bodyMediumRegular,
                 readOnly: readOnly,
                 controller: controller,

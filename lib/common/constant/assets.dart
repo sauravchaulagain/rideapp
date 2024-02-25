@@ -71,4 +71,10 @@ class Assets {
 
 //images
   static const String successAlertImage = "assets/images/success_alert.png";
+
+  //payment options logo
+  static const String cashAppLogo = "assets/images/cash_app_logo.png";
+  static const String masterCardLogo = "assets/images/master_Card_logo.png";
+  static const String paypalLogo = "assets/images/paypal_logo.png";
+  static const String visaLogo = "assets/images/visa_logo.png";
 }

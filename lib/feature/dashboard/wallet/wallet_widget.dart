@@ -5,6 +5,8 @@ import 'package:portfolioapp/common/constant/assets.dart';
 import 'package:portfolioapp/common/theme.dart';
 import 'package:portfolioapp/common/utils/size_utils.dart';
 import 'package:portfolioapp/common/widget/common_container.dart';
+import 'package:portfolioapp/common/widget/custom_button.dart';
+import 'package:portfolioapp/feature/dashboard/wallet/add_money_widget.dart';
 
 class WalletWidget extends StatelessWidget {
   const WalletWidget({super.key});
@@ -16,6 +18,28 @@ class WalletWidget extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Align(
+            alignment: Alignment.centerRight,
+            child: SizedBox(
+              width: SizeUtils.width / 3,
+              child: CustomRoundedButtom(
+                fontWeight: FontWeight.w500,
+                title: "Add Money",
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AddMoneyWidget(),
+                    ),
+                  );
+                },
+                borderColor: CustomTheme.appColor,
+                color: Colors.transparent,
+                textColor: CustomTheme.appColor,
+              ),
+            ),
+          ),
+          SizedBox(height: 10.hp),
           Row(
             children: [
               Expanded(
