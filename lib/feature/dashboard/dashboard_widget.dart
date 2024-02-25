@@ -35,7 +35,8 @@ class _DashboardWidgetState extends State<DashboardWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CustomTheme.lightColor,
-      body: SafeArea(
+      body: Padding(
+        padding: const EdgeInsets.only(bottom: 50.0),
         child: Center(
           child: pages.elementAt(_selectedIndex),
         ),
