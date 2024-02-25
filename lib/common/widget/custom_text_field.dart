@@ -44,7 +44,7 @@ class ReusableTextField extends StatelessWidget {
     this.fillColor,
     this.borderColor = Colors.white,
     this.onTap,
-    this.autovalidateMode = AutovalidateMode.onUserInteraction,
+    this.autovalidateMode,
     this.readOnly = false,
   }) : super(key: key);
 

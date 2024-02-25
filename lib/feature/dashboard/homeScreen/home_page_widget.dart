@@ -22,102 +22,104 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   Widget build(BuildContext context) {
     return PageWrapper(
       padding: EdgeInsets.zero,
-      body: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage(Assets.mapImage), fit: BoxFit.cover),
-        ),
-        child: Column(children: [
-          const HomePageTopBar(),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  margin: const EdgeInsets.symmetric(horizontal: 16),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: CustomTheme.appColor),
-                      color: CustomTheme.appColor.withOpacity(0.3)),
-                  child: Column(children: [
-                    CustomRoundedButtom(
-                      icon: Icons.search_sharp,
-                      iconColor: CustomTheme.darkColor,
-                      title: "Where would you go?",
-                      onPressed: () {
-                        showPopUpDialog(
-                            buttonName: "Proceed",
-                            buttonCallback: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        SelectTransportWidget(),
-                                  ));
-                            },
-                            context: context,
-                            title: "Select Address",
-                            body: Column(
-                              children: const [
-                                ReusableTextField(hintText: "Form"),
-                                ReusableTextField(hintText: "To"),
-                              ],
-                            ));
-                      },
-                      textColor: CustomTheme.darkColor.withOpacity(0.4),
-                      color: CustomTheme.lightColor.withOpacity(0.7),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          color: CustomTheme.lightColor),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: CustomRoundedButtom(
-                              verticalMargin: 0,
-                              textColor: isTransport
-                                  ? CustomTheme.lightColor
-                                  : CustomTheme.darkColor,
-                              title: "Transport",
-                              onPressed: () {
-                                setState(() {
-                                  isTransport = true;
-                                });
+      body: SafeArea(
+        child: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(Assets.mapImage), fit: BoxFit.cover),
+          ),
+          child: Column(children: [
+            const HomePageTopBar(),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    margin: const EdgeInsets.symmetric(horizontal: 16),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: CustomTheme.appColor),
+                        color: CustomTheme.appColor.withOpacity(0.3)),
+                    child: Column(children: [
+                      CustomRoundedButtom(
+                        icon: Icons.search_sharp,
+                        iconColor: CustomTheme.darkColor,
+                        title: "Where would you go?",
+                        onPressed: () {
+                          showPopUpDialog(
+                              buttonName: "Proceed",
+                              buttonCallback: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          SelectTransportWidget(),
+                                    ));
                               },
-                              color: isTransport
-                                  ? CustomTheme.appColor
-                                  : CustomTheme.white,
-                            ),
-                          ),
-                          Expanded(
-                            child: CustomRoundedButtom(
-                              verticalMargin: 0,
-                              textColor: !isTransport
-                                  ? CustomTheme.lightColor
-                                  : CustomTheme.darkColor,
-                              title: "Delivery",
-                              onPressed: () {
-                                setState(() {
-                                  isTransport = false;
-                                });
-                              },
-                              color: !isTransport
-                                  ? CustomTheme.appColor
-                                  : CustomTheme.white,
-                            ),
-                          ),
-                        ],
+                              context: context,
+                              title: "Select Address",
+                              body: Column(
+                                children: const [
+                                  ReusableTextField(hintText: "Form"),
+                                  ReusableTextField(hintText: "To"),
+                                ],
+                              ));
+                        },
+                        textColor: CustomTheme.darkColor.withOpacity(0.4),
+                        color: CustomTheme.lightColor.withOpacity(0.7),
                       ),
-                    )
-                  ]),
-                ),
-              ],
-            ),
-          )
-        ]),
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color: CustomTheme.lightColor),
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: CustomRoundedButtom(
+                                verticalMargin: 0,
+                                textColor: isTransport
+                                    ? CustomTheme.lightColor
+                                    : CustomTheme.darkColor,
+                                title: "Transport",
+                                onPressed: () {
+                                  setState(() {
+                                    isTransport = true;
+                                  });
+                                },
+                                color: isTransport
+                                    ? CustomTheme.appColor
+                                    : CustomTheme.white,
+                              ),
+                            ),
+                            Expanded(
+                              child: CustomRoundedButtom(
+                                verticalMargin: 0,
+                                textColor: !isTransport
+                                    ? CustomTheme.lightColor
+                                    : CustomTheme.darkColor,
+                                title: "Delivery",
+                                onPressed: () {
+                                  setState(() {
+                                    isTransport = false;
+                                  });
+                                },
+                                color: !isTransport
+                                    ? CustomTheme.appColor
+                                    : CustomTheme.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ]),
+                  ),
+                ],
+              ),
+            )
+          ]),
+        ),
       ),
     );
   }
