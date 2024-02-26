@@ -3,7 +3,8 @@ import 'package:portfolioapp/common/theme.dart';
 import 'package:portfolioapp/feature/notification/notification_widget.dart';
 
 class HomePageTopBar extends StatelessWidget {
-  const HomePageTopBar({super.key});
+  final Function() onTap;
+  const HomePageTopBar({super.key, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -12,15 +13,18 @@ class HomePageTopBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-              padding: const EdgeInsets.all(3),
-              decoration: BoxDecoration(
-                  color: CustomTheme.appColor.withOpacity(0.5),
-                  borderRadius: BorderRadius.circular(4)),
-              child: const Icon(
-                Icons.menu,
-                color: CustomTheme.darkColor,
-              )),
+          InkWell(
+            onTap: onTap,
+            child: Container(
+                padding: const EdgeInsets.all(3),
+                decoration: BoxDecoration(
+                    color: CustomTheme.appColor.withOpacity(0.5),
+                    borderRadius: BorderRadius.circular(4)),
+                child: const Icon(
+                  Icons.menu,
+                  color: CustomTheme.darkColor,
+                )),
+          ),
           InkWell(
             onTap: () {
               Navigator.push(

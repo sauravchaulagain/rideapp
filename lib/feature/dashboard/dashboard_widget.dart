@@ -99,7 +99,7 @@ class _DashboardWidgetState extends State<DashboardWidget> {
                       ? CustomTheme.appColor
                       : CustomTheme.darkColor.withOpacity(0.7),
                   width: 30),
-              label: 'Discount',
+              label: 'Profile',
             ),
           ],
           currentIndex: _selectedIndex,
