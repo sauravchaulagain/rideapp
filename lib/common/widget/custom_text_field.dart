@@ -23,6 +23,7 @@ class ReusableTextField extends StatelessWidget {
   final VoidCallback? onTap;
   final bool readOnly;
   final AutovalidateMode? autovalidateMode;
+  final int? maxLines; // New property for maximum lines
 
   const ReusableTextField({
     Key? key,
@@ -46,6 +47,7 @@ class ReusableTextField extends StatelessWidget {
     this.onTap,
     this.autovalidateMode,
     this.readOnly = false,
+    this.maxLines, // Initialize the new property
   }) : super(key: key);
 
   @override
@@ -99,6 +101,7 @@ class ReusableTextField extends StatelessWidget {
                 inputFormatters: inputFormatters,
                 validator: validator,
                 onTap: onTap,
+                maxLines: maxLines, // Set maxLines property
               ),
             ),
           ],

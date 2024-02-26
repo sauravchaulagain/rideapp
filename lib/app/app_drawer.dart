@@ -3,6 +3,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:portfolioapp/app/text_style.dart';
 import 'package:portfolioapp/common/constant/assets.dart';
 import 'package:portfolioapp/common/utils/size_utils.dart';
+import 'package:portfolioapp/feature/drawer/aboutUs/about_us_widget.dart';
+import 'package:portfolioapp/feature/drawer/complain/complain_widget.dart';
+import 'package:portfolioapp/feature/drawer/helpSupport/help_support_widget.dart';
+import 'package:portfolioapp/feature/drawer/history/history_widget.dart';
+import 'package:portfolioapp/feature/drawer/referral/referral_widget.dart';
 
 import '../common/theme.dart';
 
@@ -44,28 +49,40 @@ class CustomDrawer extends StatelessWidget {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             itemCount: drawerItems.length,
-            itemBuilder: (context, index) => Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    color: CustomTheme.darkColor.withOpacity(0.2),
+            itemBuilder: (context, index) => InkWell(
+              onTap: () {
+                Navigator.pop(context);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => screens[index],
+                  ),
+                );
+              },
+              child: Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      color: CustomTheme.darkColor.withOpacity(0.2),
+                    ),
                   ),
                 ),
-              ),
-              child: Row(
-                children: [
-                  SvgPicture.asset(
-                    drawerItemIcons[index],
-                    height: 25.hp,
-                  ),
-                  SizedBox(width: 10.wp),
-                  Text(
-                    drawerItems[index],
-                    style: PoppinsTextStyles.labelMediumRegular
-                        .copyWith(fontSize: 12, fontWeight: FontWeight.w500),
-                  ),
-                ],
+                child: Row(
+                  children: [
+                    SvgPicture.asset(
+                      drawerItemIcons[index],
+                      height: 25.hp,
+                    ),
+                    SizedBox(width: 10.wp),
+                    Text(
+                      drawerItems[index],
+                      style: PoppinsTextStyles.labelMediumRegular
+                          .copyWith(fontSize: 12, fontWeight: FontWeight.w500),
+                    ),
+                  ],
+                ),
               ),
             ),
           )
@@ -91,5 +108,12 @@ class CustomDrawer extends StatelessWidget {
     Assets.settingsIcon,
     Assets.helpAndSupportIcon,
     Assets.logoutIcon,
+  ];
+  final List screens = [
+    const HistoryWidget(),
+    const ComplainWidget(),
+    ReferralWidget(),
+    const AboutUsWidget(),
+    const HelpSupportWidget(),
   ];
 }
