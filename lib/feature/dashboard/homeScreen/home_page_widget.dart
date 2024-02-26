@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/app/text_style.dart';
+import 'package:portfolioapp/app/app_drawer.dart';
 import 'package:portfolioapp/common/constant/assets.dart';
 import 'package:portfolioapp/common/theme.dart';
-import 'package:portfolioapp/common/utils/size_utils.dart';
 import 'package:portfolioapp/common/widget/common_dialogue_box.dart';
 import 'package:portfolioapp/common/widget/custom_button.dart';
 import 'package:portfolioapp/common/widget/custom_text_field.dart';
@@ -27,38 +26,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       padding: EdgeInsets.zero,
       body: SafeArea(
         child: Scaffold(
-          drawer: Drawer(
-              shape: const OutlineInputBorder(
-                  borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(80),
-                      bottomRight: Radius.circular(80)),
-                  borderSide: BorderSide()),
-              child: Column(
-                children: [
-                  SizedBox(height: 5.h),
-                  Container(
-                    margin: const EdgeInsets.only(bottom: 18),
-                    decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: CustomTheme.secondaryColor),
-                    height: 80.hp,
-                  ),
-                  Text(
-                    "Nate Samson",
-                    style: PoppinsTextStyles.titleMediumRegular
-                        .copyWith(fontWeight: FontWeight.w500),
-                  ),
-                  ListView.builder(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemCount: drawerItems.length,
-                    itemBuilder: (context, index) => Text(
-                      drawerItems[index],
-                      style: PoppinsTextStyles.labelMediumRegular,
-                    ),
-                  )
-                ],
-              )),
+          drawer: CustomDrawer(),
           backgroundColor: Colors.transparent,
           key: _scaffoldKey,
           body: SafeArea(
@@ -172,14 +140,4 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       ),
     );
   }
-
-  final List drawerItems = [
-    "History",
-    "Complain",
-    "Referral",
-    "About Us",
-    "Settings",
-    "Help & Suport",
-    "Logout"
-  ];
 }

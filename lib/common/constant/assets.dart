@@ -71,6 +71,7 @@ class Assets {
 
 //images
   static const String successAlertImage = "assets/images/success_alert.png";
+  static const String profileImage = "assets/images/profile_picture.png";
 
   //payment options logo
   static const String cashAppLogo = "assets/images/cash_app_logo.png";
