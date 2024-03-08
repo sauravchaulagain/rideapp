@@ -60,6 +60,8 @@ class Assets {
   static const String anywhereYouAreImage =
       "assets/images/Anywhere you are.png";
 
+//splash
+  static const String splashImage = "assets/images/splash_image.png";
   //select Transaport
   static const String carImage = "assets/images/Car.png";
   static const String bikeImage = "assets/images/Bike.png";

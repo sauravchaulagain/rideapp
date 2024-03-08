@@ -7,14 +7,14 @@ import 'package:portfolioapp/common/widget/custom_text_field.dart';
 import 'package:portfolioapp/feature/auth/register/screen/signup_page.dart';
 import 'package:portfolioapp/feature/dashboard/dashboard_widget.dart';
 
-class LopginWidget extends StatefulWidget {
-  const LopginWidget({super.key});
+class LoginWidget extends StatefulWidget {
+  const LoginWidget({super.key});
 
   @override
-  State<LopginWidget> createState() => _LopginWidget();
+  State<LoginWidget> createState() => _LopginWidget();
 }
 
-class _LopginWidget extends State<LopginWidget> {
+class _LopginWidget extends State<LoginWidget> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 

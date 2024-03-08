@@ -1,25 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/common/constant/assets.dart';
-import 'package:portfolioapp/common/navigation/navigation_service.dart';
-import 'package:portfolioapp/common/theme.dart';
 import 'package:portfolioapp/app/text_style.dart';
+import 'package:portfolioapp/common/constant/assets.dart';
+import 'package:portfolioapp/common/theme.dart';
 import 'package:portfolioapp/common/utils/size_utils.dart';
 import 'package:portfolioapp/common/widget/page_wrapper.dart';
 import 'package:portfolioapp/feature/auth/permission_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OnBoardingPage extends StatefulWidget {
+  const OnBoardingPage({super.key});
+
   @override
   _OnBoardingPageState createState() => _OnBoardingPageState();
 }
 
 class _OnBoardingPageState extends State<OnBoardingPage> {
-  PageController _pageController = PageController(initialPage: 0);
+  final PageController _pageController = PageController(initialPage: 0);
   int _currentPage = 0;
+  @override
+  void initState() {
+    getAppStatus();
+    super.initState();
+  }
+
+  getAppStatus() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final appStatus = await prefs.setBool("showOnboarding", false);
+    return appStatus;
+  }
 
   @override
   Widget build(BuildContext context) {
     return PageWrapper(
-      padding: EdgeInsets.symmetric(vertical: 18, horizontal: 12),
+      padding: const EdgeInsets.symmetric(vertical: 18, horizontal: 12),
       body: SafeArea(
         child: Column(
           children: [
@@ -30,7 +43,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => PermissionPage(),
+                        builder: (context) => const PermissionPage(),
                       ));
                 },
                 child: Text(
@@ -70,20 +83,20 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                 ],
               ),
             ),
-            SizedBox(height: 20), // Add some space
+            const SizedBox(height: 20), // Add some space
             InkWell(
                 onTap: () {
                   if (_currentPage < 2) {
                     _pageController.animateToPage(
                       _currentPage + 1,
-                      duration: Duration(milliseconds: 500),
+                      duration: const Duration(milliseconds: 500),
                       curve: Curves.easeInOut,
                     );
                   } else {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => PermissionPage(),
+                          builder: (context) => const PermissionPage(),
                         ));
                   }
                 },
@@ -137,9 +150,10 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               value: (_currentPage + 1) / 3,
               strokeWidth: 5.0,
               backgroundColor: Colors.grey,
-              valueColor: AlwaysStoppedAnimation<Color>(CustomTheme.appColor),
+              valueColor:
+                  const AlwaysStoppedAnimation<Color>(CustomTheme.appColor),
             ),
-            Center(
+            const Center(
                 child: Icon(
               Icons.arrow_forward,
               size: 30,

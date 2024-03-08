@@ -54,7 +54,7 @@ class _AddMoneyWidgetState extends State<AddMoneyWidget> {
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 controller: _amountController,
                 hintText: "Enter Amount",
-                keyboardType: TextInputType.number,
+                textInputType: TextInputType.number,
                 validator: (value) => FormValidator.validateAmount(
                     val: value.toString(), minAmount: 10, maxAmount: 5000),
               ),

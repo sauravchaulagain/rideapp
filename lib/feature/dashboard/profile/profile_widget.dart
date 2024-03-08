@@ -63,7 +63,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
               );
             },
           ),
-          const ReusableTextField(
+          ReusableTextField(
             hintText: "Address",
           ),
           CustomRoundedButtom(
@@ -73,7 +73,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const LopginWidget(),
+                    builder: (context) => const LoginWidget(),
                   ));
             },
             textColor: CustomTheme.appColor,

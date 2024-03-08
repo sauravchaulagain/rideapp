@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolioapp/common/theme.dart';
-import 'package:portfolioapp/feature/onbaording/onboarding_screen.dart';
+import 'package:portfolioapp/feature/onbaording/splash_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,6 +15,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         theme: CustomTheme.darkTheme,
         debugShowCheckedModeBanner: false,
-        home: OnBoardingPage());
+        home: const SplashWidget());
   }
 }

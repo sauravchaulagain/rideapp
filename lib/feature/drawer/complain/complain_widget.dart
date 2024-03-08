@@ -73,8 +73,8 @@ class _ComplainWidgetState extends State<ComplainWidget> {
                 controller: complainController,
                 validator: (p0) =>
                     FormValidator.validateFieldNotEmpty(p0, "This Field"),
-                maxLines: 4,
-                keyboardType: TextInputType.multiline,
+                // maxLines: 4,
+                textInputType: TextInputType.multiline,
                 hintText: "Write your complain here (minimum 10 characters)",
               )
             ],

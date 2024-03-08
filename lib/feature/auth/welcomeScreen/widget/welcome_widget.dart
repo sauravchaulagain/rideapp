@@ -35,7 +35,6 @@ class WelcomeWidget extends StatelessWidget {
                     ));
               },
             ),
-            SizedBox(height: 20.hp),
             CustomRoundedButtom(
               color: Colors.transparent,
               title: "Login",
@@ -45,7 +44,7 @@ class WelcomeWidget extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const LopginWidget(),
+                      builder: (context) => const LoginWidget(),
                     ));
               },
             ),
