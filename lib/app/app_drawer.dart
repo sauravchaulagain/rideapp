@@ -3,6 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:portfolioapp/app/text_style.dart';
 import 'package:portfolioapp/common/constant/assets.dart';
 import 'package:portfolioapp/common/utils/size_utils.dart';
+import 'package:portfolioapp/common/widget/common_popup_box.dart';
+import 'package:portfolioapp/feature/auth/login/login_page.dart';
 import 'package:portfolioapp/feature/drawer/aboutUs/about_us_widget.dart';
 import 'package:portfolioapp/feature/drawer/complain/complain_widget.dart';
 import 'package:portfolioapp/feature/drawer/helpSupport/help_support_widget.dart';
@@ -14,6 +16,16 @@ import '../common/theme.dart';
 
 class CustomDrawer extends StatelessWidget {
   CustomDrawer({super.key});
+  void handleLogout(BuildContext context) {
+    Navigator.of(context).pop();
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const LoginWidget(),
+      ),
+      (route) => false,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,12 +66,26 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.pop(context);
 
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => screens[index],
-                  ),
-                );
+                if (index == 6) {
+                  showCommonPopUpDialog(
+                      context: context,
+                      message: "Are you sure you want to logout?",
+                      title: "Alert",
+                      onEnablePressed: () => handleLogout(context),
+                      imageUrl: Assets.successAlertImage,
+                      disableButtonName: "Cancel",
+                      onDisablePressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      enableButtonName: "Logout");
+                } else {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => screens[index],
+                    ),
+                  );
+                }
               },
               child: Container(
                 padding: const EdgeInsets.all(12),
@@ -99,7 +125,7 @@ class CustomDrawer extends StatelessWidget {
     "About Us",
     "Settings",
     "Help & Suport",
-    "Logout"
+    // "Logout"
   ];
   final List drawerItemIcons = [
     Assets.historyIcon,
@@ -108,7 +134,7 @@ class CustomDrawer extends StatelessWidget {
     Assets.aboutUsIcon,
     Assets.settingsIcon,
     Assets.helpAndSupportIcon,
-    Assets.logoutIcon,
+    // Assets.logoutIcon,
   ];
   final List screens = [
     const HistoryWidget(),

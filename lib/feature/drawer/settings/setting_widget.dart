@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:portfolioapp/common/constant/assets.dart';
 import 'package:portfolioapp/common/widget/common_container.dart';
 import 'package:portfolioapp/common/widget/common_list_tile.dart';
+import 'package:portfolioapp/common/widget/common_popup_box.dart';
+import 'package:portfolioapp/feature/auth/login/login_page.dart';
 import 'package:portfolioapp/feature/drawer/settings/change_password_widget.dart';
 import 'package:portfolioapp/feature/drawer/settings/contact_us_widget.dart';
 import 'package:portfolioapp/feature/drawer/settings/delete_account_widget.dart';
@@ -47,7 +49,31 @@ class SettingWidget extends StatelessWidget {
                 builder: (context) => const DeleteAccountWidget(),
               ));
         }),
+    SettingItem(
+        title: "Logout",
+        onTap: (BuildContext context) {
+          showCommonPopUpDialog(
+              context: context,
+              message: "Are you sure you want to logout?",
+              title: "Alert",
+              onEnablePressed: () {
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const LoginWidget(),
+                  ),
+                  (route) => false,
+                );
+              },
+              imageUrl: Assets.successAlertImage,
+              disableButtonName: "Cancel",
+              onDisablePressed: () {
+                Navigator.of(context).pop();
+              },
+              enableButtonName: "Logout");
+        })
   ];
+
   @override
   Widget build(BuildContext context) {
     return CommonContainer(
