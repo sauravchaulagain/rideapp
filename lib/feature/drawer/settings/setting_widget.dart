@@ -4,6 +4,7 @@ import 'package:portfolioapp/common/constant/assets.dart';
 import 'package:portfolioapp/common/widget/common_container.dart';
 import 'package:portfolioapp/common/widget/common_list_tile.dart';
 import 'package:portfolioapp/feature/drawer/settings/change_password_widget.dart';
+import 'package:portfolioapp/feature/drawer/settings/privacy_policy_widget.dart';
 
 class SettingWidget extends StatelessWidget {
   SettingWidget({super.key});
@@ -14,7 +15,7 @@ class SettingWidget extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ChangePasswordWidget(),
+                builder: (context) => const ChangePasswordWidget(),
               ));
         }),
     SettingItem(
@@ -23,7 +24,7 @@ class SettingWidget extends StatelessWidget {
           Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => SettingWidget(),
+                builder: (context) => const PrivacyPolicyWidget(),
               ));
         }),
     SettingItem(
