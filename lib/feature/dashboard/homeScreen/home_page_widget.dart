@@ -31,6 +31,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           key: _scaffoldKey,
           body: SafeArea(
             child: Container(
+              padding: const EdgeInsets.only(top: 18),
               decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(Assets.mapImage), fit: BoxFit.cover),
@@ -45,7 +46,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     }
                   },
                 ),
-                Expanded(
+                const Spacer(),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 80),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -64,6 +67,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             title: "Where would you go?",
                             onPressed: () {
                               showPopUpDialog(
+                                  barrierDismissible: false,
                                   buttonName: "Proceed",
                                   buttonCallback: () {
                                     Navigator.push(
@@ -77,6 +81,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   title: "Select Address",
                                   body: Column(
                                     children: [
+                                      const SizedBox(height: 20),
                                       ReusableTextField(hintText: "Form"),
                                       ReusableTextField(hintText: "To"),
                                     ],

@@ -38,11 +38,12 @@ class _AddMoneyWidgetState extends State<AddMoneyWidget> {
                   message: "Your money has been add successfully",
                   enableButtonName: "Done",
                   onEnablePressed: () {
-                    Navigator.push(
+                    Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
                         builder: (context) => const DashboardWidget(),
                       ),
+                      (route) => false,
                     );
                   });
             }

@@ -9,8 +9,10 @@ showPopUpDialog({
   required Widget body,
   required VoidCallback buttonCallback,
   required String buttonName,
+  bool barrierDismissible = false,
 }) {
   showGeneralDialog(
+    barrierDismissible: true,
     barrierColor: Colors.black.withOpacity(0.5),
     transitionBuilder: (context, a1, a2, widget) {
       return Transform.scale(
@@ -63,14 +65,15 @@ class CommonDialogueBox extends StatelessWidget {
         ),
         child: Container(
           padding: EdgeInsets.symmetric(
-            vertical: 15.hp,
+            vertical: 18.hp,
             horizontal: 15.hp,
           ),
           child: Column(
             children: [
               Text(
                 title,
-                style: PoppinsTextStyles.titleMediumRegular,
+                style:
+                    PoppinsTextStyles.titleMediumRegular.copyWith(fontSize: 16),
               ),
               body,
               if (buttonName.isNotEmpty)

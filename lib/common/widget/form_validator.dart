@@ -18,8 +18,6 @@ class FormValidator {
   //   }
   // }
 
-
- 
   static String? validatePhoneNumber(String? val) {
     final RegExp regExp = RegExp(r'([9][678][0-6][0-9]{7})');
     if (val == null) {
@@ -40,10 +38,10 @@ class FormValidator {
     }
   }
 
-  static String? validateFieldNotEmpty(String? p0, String fieldName) {
-    if (p0 == null) {
+  static String? validateFieldNotEmpty(String? value, String fieldName) {
+    if (value == null) {
       return "$fieldName cannot be empty.";
-    } else if (p0.isEmpty) {
+    } else if (value.isEmpty) {
       return "$fieldName cannot be empty.";
       // return LocaleKeys.fieldCannotBeEmpty.tr(args: [fieldName]);
     } else {

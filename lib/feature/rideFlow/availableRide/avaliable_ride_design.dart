@@ -66,11 +66,13 @@ class AvailableRideBoxDesign extends StatelessWidget {
                     enableButtonName: "Done",
                     onEnablePressed: () {
                       Navigator.pop(context);
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const DashboardWidget(),
-                          ));
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const DashboardWidget(),
+                        ),
+                        (route) => false,
+                      );
                     },
                     message:
                         "Thank you for your time. Please wait for call form our rider.");
