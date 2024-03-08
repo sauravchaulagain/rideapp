@@ -6,6 +6,7 @@ import 'package:portfolioapp/common/widget/common_container.dart';
 import 'package:portfolioapp/common/widget/common_dropdown_box.dart';
 import 'package:portfolioapp/common/widget/custom_button.dart';
 import 'package:portfolioapp/common/widget/custom_text_field.dart';
+import 'package:portfolioapp/common/widget/form_validator.dart';
 import 'package:portfolioapp/feature/auth/login/login_page.dart';
 
 class SignUpWidget extends StatefulWidget {
@@ -34,26 +35,28 @@ class _SignUpWidgetState extends State<SignUpWidget> {
               autovalidateMode: AutovalidateMode.onUserInteraction,
               controller: nameController,
               hintText: "Name",
-              validator: (p0) {
-                if (p0.toString().isEmpty) {
-                  return "Cannot be empty";
-                } else {
-                  return null;
-                }
-              },
+              validator: (value) =>
+                  FormValidator.validateFieldNotEmpty(value, "Name"),
             ),
             ReusableTextField(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               controller: emailController,
               hintText: "Email",
+              validator: (value) => FormValidator.validateEmail(value),
             ),
             ReusableTextField(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               controller: phoneNumberController,
               hintText: "Phone Number",
+              validator: (value) => FormValidator.validatePhoneNumber(value),
             ),
             ReusableTextField(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               suffixIcon: const Icon(Icons.keyboard_arrow_down_outlined),
               controller: genderController,
               hintText: "Gender",
+              validator: (value) =>
+                  FormValidator.validateFieldNotEmpty(value, "Gender"),
               readOnly: true,
               onTap: () {
                 showPopUpMenuWithItems(

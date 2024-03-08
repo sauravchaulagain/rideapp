@@ -1,3 +1,5 @@
+import 'package:portfolioapp/common/utils/text_utils.dart';
+
 class FormValidator {
   // static String? validatePassword(String? val, {String? label}) {
   //   final RegExp _regex = RegExp(
@@ -16,6 +18,8 @@ class FormValidator {
   //   }
   // }
 
+
+ 
   static String? validatePhoneNumber(String? val) {
     final RegExp regExp = RegExp(r'([9][678][0-6][0-9]{7})');
     if (val == null) {
@@ -78,6 +82,25 @@ class FormValidator {
       } else {
         return "Amount must be between $minAmount and $maxAmount";
       }
+    }
+  }
+
+  static String? validateEmail(String? val, [bool supportEmpty = false]) {
+    if (supportEmpty && (val == null || val.isEmpty)) {
+      return null;
+    } else if (val == null) {
+      // return LocaleKeys.fieldCannotBeEmpty.tr(args: [LocaleKeys.email.tr()]);
+      return "Email Cannot be empty";
+    } else if (val.isEmpty) {
+      return "Email Cannot be empty";
+
+      // return LocaleKeys.fieldCannotBeEmpty.tr(args: [LocaleKeys.email.tr()]);
+    } else if (TextUtils.validateEmail(val)) {
+      return null;
+    } else {
+      return "Please Enter a valid Email";
+
+      // return LocaleKeys.pleaseEnterValidField.tr(args: [LocaleKeys.email.tr()]);
     }
   }
 }

@@ -22,7 +22,7 @@ class ReusableTextField extends FormField<String> {
     VoidCallback? onSuffixPressed,
     int? maxLength,
     bool customHintTextStyle = false,
-    double bottomMargin = 10,
+    double bottomMargin = 18,
     double horizontalMargin = 0,
     // double horizontalMargin = CustomTheme.symmetricHozPadding,
     AutovalidateMode? autovalidateMode,
@@ -36,7 +36,7 @@ class ReusableTextField extends FormField<String> {
     VoidCallback? onSurffixImagePress,
     Widget? prefix,
     int maxLine = 1,
-    double borderRadius = 15,
+    double borderRadius = 12,
     Widget? trailingTitle,
     bool obscureText = false,
     List<TextInputFormatter>? inputFormatters,
@@ -149,8 +149,7 @@ class ReusableTextField extends FormField<String> {
                                     border: type == TextFieldType.Outline
                                         ? Border.all(
                                             width: 1,
-                                            color: CustomTheme.darkColor
-                                                .withOpacity(0.5),
+                                            color: CustomTheme.gray,
                                           )
                                         : null,
                                   ),

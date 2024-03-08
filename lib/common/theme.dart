@@ -33,6 +33,7 @@ class CustomTheme {
   static const Color darkTextColor = Color(0xfff8f8f8);
   static const Color spanishGray = Color(0xFF9D9D9D);
   static const Color flutterColor = Color(0xFF25D366);
+  static const Color d0d0d0Color = Color(0xFFD0D0D0);
 
   static const Color white = Colors.white;
   static const double borderRadius = 12;
