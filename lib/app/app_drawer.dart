@@ -8,6 +8,7 @@ import 'package:portfolioapp/feature/drawer/complain/complain_widget.dart';
 import 'package:portfolioapp/feature/drawer/helpSupport/help_support_widget.dart';
 import 'package:portfolioapp/feature/drawer/history/history_widget.dart';
 import 'package:portfolioapp/feature/drawer/referral/referral_widget.dart';
+import 'package:portfolioapp/feature/drawer/settings/setting_widget.dart';
 
 import '../common/theme.dart';
 
@@ -114,6 +115,7 @@ class CustomDrawer extends StatelessWidget {
     const ComplainWidget(),
     ReferralWidget(),
     const AboutUsWidget(),
+    SettingWidget(),
     const HelpSupportWidget(),
   ];
 }

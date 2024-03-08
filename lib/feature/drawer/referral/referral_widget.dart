@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:portfolioapp/common/constant/assets.dart';
+import 'package:portfolioapp/common/theme.dart';
 import 'package:portfolioapp/common/utils/size_utils.dart';
 import 'package:portfolioapp/common/widget/common_container.dart';
 import 'package:portfolioapp/common/widget/custom_button.dart';
@@ -17,24 +18,36 @@ class ReferralWidget extends StatelessWidget {
         appBarTitle: "Referral",
         body: Column(
           children: [
-            ReusableTextField(
-              readOnly: true,
-              onTap: () {
-                _copyToClipboard(context, referralCodeController.text);
-              },
-              suffixIcon: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SvgPicture.asset(
-                    Assets.copyIcon,
-                    height: 30.hp,
+            Row(
+              children: [
+                Expanded(
+                  child: ReusableTextField(
+                    readOnly: true,
+                    onTap: () {},
+                    suffixIcon: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          Assets.copyIcon,
+                          height: 30.hp,
+                        ),
+                      ],
+                    ),
+                    hintText: "Code",
+                    controller: referralCodeController..text = "RkMFucd",
+                    title: "Refer a friend and Earn \$20",
                   ),
-                ],
-              ),
-              hintText: "Code",
-              controller: referralCodeController..text = "RkMFucd",
-              title: "Refer a friend and Earn \$20",
+                ),
+                IconButton(
+                    onPressed: () {
+                      _copyToClipboard(context, referralCodeController.text);
+                    },
+                    icon: const Icon(
+                      Icons.copy,
+                      color: CustomTheme.darkColor,
+                    )),
+              ],
             ),
             CustomRoundedButtom(
               title: "Invite",
