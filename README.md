@@ -38,7 +38,8 @@ flutter:
         - asset: fonts/Poppins-SemiBold.ttf
         - asset: fonts/Poppins-Bold.ttf
         - asset: fonts/Poppins-ExtraBold.ttf
-  
+
+```
 ## Installation and Setup
 1. Clone the repository.
 2. Ensure Flutter is installed on your system.
