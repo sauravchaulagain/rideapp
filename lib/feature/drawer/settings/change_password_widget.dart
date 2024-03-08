@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolioapp/common/constant/assets.dart';
-import 'package:portfolioapp/common/widget/common_container.dart';
-import 'package:portfolioapp/common/widget/common_popup_box.dart';
-import 'package:portfolioapp/common/widget/custom_text_field.dart';
-import 'package:portfolioapp/common/widget/form_validator.dart';
-import 'package:portfolioapp/feature/auth/login/login_page.dart';
+import 'package:ridesharing/common/constant/assets.dart';
+import 'package:ridesharing/common/widget/common_container.dart';
+import 'package:ridesharing/common/widget/common_popup_box.dart';
+import 'package:ridesharing/common/widget/custom_text_field.dart';
+import 'package:ridesharing/common/widget/form_validator.dart';
+import 'package:ridesharing/feature/auth/login/login_page.dart';
 
 class ChangePasswordWidget extends StatefulWidget {
   const ChangePasswordWidget({super.key});

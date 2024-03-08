@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolioapp/app/text_style.dart';
-import 'package:portfolioapp/common/constant/assets.dart';
-import 'package:portfolioapp/common/theme.dart';
-import 'package:portfolioapp/common/utils/size_utils.dart';
-import 'package:portfolioapp/common/widget/common_container.dart';
-import 'package:portfolioapp/common/widget/custom_button.dart';
-import 'package:portfolioapp/feature/dashboard/wallet/add_money_widget.dart';
+import 'package:ridesharing/app/text_style.dart';
+import 'package:ridesharing/common/constant/assets.dart';
+import 'package:ridesharing/common/theme.dart';
+import 'package:ridesharing/common/utils/size_utils.dart';
+import 'package:ridesharing/common/widget/common_container.dart';
+import 'package:ridesharing/common/widget/custom_button.dart';
+import 'package:ridesharing/feature/dashboard/wallet/add_money_widget.dart';
 
 class WalletWidget extends StatelessWidget {
   const WalletWidget({super.key});

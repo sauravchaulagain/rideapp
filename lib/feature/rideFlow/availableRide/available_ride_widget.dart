@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/common/widget/common_container.dart';
-import 'package:portfolioapp/feature/rideFlow/availableRide/avaliable_ride_design.dart';
+import 'package:ridesharing/common/widget/common_container.dart';
+import 'package:ridesharing/feature/rideFlow/availableRide/avaliable_ride_design.dart';
 
 class AvailableRideWidget extends StatelessWidget {
   const AvailableRideWidget({super.key});

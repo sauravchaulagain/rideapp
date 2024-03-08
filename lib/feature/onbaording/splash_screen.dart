@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/common/constant/assets.dart';
-import 'package:portfolioapp/feature/auth/welcomeScreen/screen/welcome_page.dart';
-import 'package:portfolioapp/feature/onbaording/onboarding_screen.dart';
+import 'package:ridesharing/common/constant/assets.dart';
+import 'package:ridesharing/feature/auth/welcomeScreen/screen/welcome_page.dart';
+import 'package:ridesharing/feature/onbaording/onboarding_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashWidget extends StatefulWidget {

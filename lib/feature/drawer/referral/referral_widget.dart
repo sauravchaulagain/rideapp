@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:portfolioapp/common/constant/assets.dart';
-import 'package:portfolioapp/common/theme.dart';
-import 'package:portfolioapp/common/utils/size_utils.dart';
-import 'package:portfolioapp/common/widget/common_container.dart';
-import 'package:portfolioapp/common/widget/custom_button.dart';
-import 'package:portfolioapp/common/widget/custom_text_field.dart';
+import 'package:ridesharing/common/constant/assets.dart';
+import 'package:ridesharing/common/theme.dart';
+import 'package:ridesharing/common/utils/size_utils.dart';
+import 'package:ridesharing/common/widget/common_container.dart';
+import 'package:ridesharing/common/widget/custom_button.dart';
+import 'package:ridesharing/common/widget/custom_text_field.dart';
 import 'package:share_plus/share_plus.dart';
 
 class ReferralWidget extends StatelessWidget {

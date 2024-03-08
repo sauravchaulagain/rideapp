@@ -1,4 +1,4 @@
-import 'package:portfolioapp/common/utils/text_utils.dart';
+import 'package:ridesharing/common/utils/text_utils.dart';
 
 class FormValidator {
   // static String? validatePassword(String? val, {String? label}) {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/common/constant/assets.dart';
-import 'package:portfolioapp/common/widget/common_container.dart';
-import 'package:portfolioapp/common/widget/common_gridview_container.dart';
-import 'package:portfolioapp/feature/rideFlow/availableRide/available_ride_widget.dart';
+import 'package:ridesharing/common/constant/assets.dart';
+import 'package:ridesharing/common/widget/common_container.dart';
+import 'package:ridesharing/common/widget/common_gridview_container.dart';
+import 'package:ridesharing/feature/rideFlow/availableRide/available_ride_widget.dart';
 
 class SelectTransportWidget extends StatelessWidget {
   SelectTransportWidget({super.key});

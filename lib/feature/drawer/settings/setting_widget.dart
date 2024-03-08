@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolioapp/common/constant/assets.dart';
-import 'package:portfolioapp/common/widget/common_container.dart';
-import 'package:portfolioapp/common/widget/common_list_tile.dart';
-import 'package:portfolioapp/common/widget/common_popup_box.dart';
-import 'package:portfolioapp/feature/auth/login/login_page.dart';
-import 'package:portfolioapp/feature/drawer/settings/change_password_widget.dart';
-import 'package:portfolioapp/feature/drawer/settings/contact_us_widget.dart';
-import 'package:portfolioapp/feature/drawer/settings/delete_account_widget.dart';
-import 'package:portfolioapp/feature/drawer/settings/privacy_policy_widget.dart';
+import 'package:ridesharing/common/constant/assets.dart';
+import 'package:ridesharing/common/widget/common_container.dart';
+import 'package:ridesharing/common/widget/common_list_tile.dart';
+import 'package:ridesharing/common/widget/common_popup_box.dart';
+import 'package:ridesharing/feature/auth/login/login_page.dart';
+import 'package:ridesharing/feature/drawer/settings/change_password_widget.dart';
+import 'package:ridesharing/feature/drawer/settings/contact_us_widget.dart';
+import 'package:ridesharing/feature/drawer/settings/delete_account_widget.dart';
+import 'package:ridesharing/feature/drawer/settings/privacy_policy_widget.dart';
 
 class SettingWidget extends StatelessWidget {
   SettingWidget({super.key});

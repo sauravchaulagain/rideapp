@@ -1,4 +1,4 @@
-package com.example.portfolioapp
+package com.example.ridesharing
 
 import io.flutter.embedding.android.FlutterActivity
 

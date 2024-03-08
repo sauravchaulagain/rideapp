@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/app/text_style.dart';
-import 'package:portfolioapp/common/theme.dart';
-import 'package:portfolioapp/common/utils/size_utils.dart';
+import 'package:ridesharing/app/text_style.dart';
+import 'package:ridesharing/common/theme.dart';
+import 'package:ridesharing/common/utils/size_utils.dart';
 
 showPopUpMenuWithItems({
   required BuildContext context,

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:portfolioapp/app/text_style.dart';
-import 'package:portfolioapp/common/constant/assets.dart';
-import 'package:portfolioapp/common/utils/size_utils.dart';
-import 'package:portfolioapp/common/widget/common_popup_box.dart';
-import 'package:portfolioapp/feature/auth/login/login_page.dart';
-import 'package:portfolioapp/feature/drawer/aboutUs/about_us_widget.dart';
-import 'package:portfolioapp/feature/drawer/complain/complain_widget.dart';
-import 'package:portfolioapp/feature/drawer/helpSupport/help_support_widget.dart';
-import 'package:portfolioapp/feature/drawer/history/history_widget.dart';
-import 'package:portfolioapp/feature/drawer/referral/referral_widget.dart';
-import 'package:portfolioapp/feature/drawer/settings/setting_widget.dart';
+import 'package:ridesharing/app/text_style.dart';
+import 'package:ridesharing/common/constant/assets.dart';
+import 'package:ridesharing/common/utils/size_utils.dart';
+import 'package:ridesharing/common/widget/common_popup_box.dart';
+import 'package:ridesharing/feature/auth/login/login_page.dart';
+import 'package:ridesharing/feature/drawer/aboutUs/about_us_widget.dart';
+import 'package:ridesharing/feature/drawer/complain/complain_widget.dart';
+import 'package:ridesharing/feature/drawer/helpSupport/help_support_widget.dart';
+import 'package:ridesharing/feature/drawer/history/history_widget.dart';
+import 'package:ridesharing/feature/drawer/referral/referral_widget.dart';
+import 'package:ridesharing/feature/drawer/settings/setting_widget.dart';
 
 import '../common/theme.dart';
 

@@ -1,6 +1,5 @@
-import 'package:portfolioapp/common/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/common/theme.dart';
+import 'package:ridesharing/common/theme.dart';
 
 class CommonDetailBox extends StatelessWidget {
   final String? trailingImage;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:portfolioapp/common/theme.dart';
-import 'package:portfolioapp/common/utils/size_utils.dart';
-import 'package:portfolioapp/common/widget/custom_button.dart';
-import 'package:portfolioapp/common/widget/page_wrapper.dart';
+import 'package:ridesharing/common/theme.dart';
+import 'package:ridesharing/common/utils/size_utils.dart';
+import 'package:ridesharing/common/widget/custom_button.dart';
+import 'package:ridesharing/common/widget/page_wrapper.dart';
 
 class OTPWidget extends StatefulWidget {
   const OTPWidget({super.key, required this.onValueCallback});

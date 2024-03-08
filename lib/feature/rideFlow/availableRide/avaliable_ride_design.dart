@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/app/text_style.dart';
-import 'package:portfolioapp/common/constant/assets.dart';
-import 'package:portfolioapp/common/theme.dart';
-import 'package:portfolioapp/common/utils/size_utils.dart';
-import 'package:portfolioapp/common/widget/common_popup_box.dart';
-import 'package:portfolioapp/common/widget/custom_button.dart';
-import 'package:portfolioapp/feature/dashboard/dashboard_widget.dart';
+import 'package:ridesharing/app/text_style.dart';
+import 'package:ridesharing/common/constant/assets.dart';
+import 'package:ridesharing/common/theme.dart';
+import 'package:ridesharing/common/utils/size_utils.dart';
+import 'package:ridesharing/common/widget/common_popup_box.dart';
+import 'package:ridesharing/common/widget/custom_button.dart';
+import 'package:ridesharing/feature/dashboard/dashboard_widget.dart';
 
 class AvailableRideBoxDesign extends StatelessWidget {
   const AvailableRideBoxDesign({super.key});

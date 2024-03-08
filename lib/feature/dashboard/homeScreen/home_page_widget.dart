@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/app/app_drawer.dart';
-import 'package:portfolioapp/common/constant/assets.dart';
-import 'package:portfolioapp/common/theme.dart';
-import 'package:portfolioapp/common/widget/common_dialogue_box.dart';
-import 'package:portfolioapp/common/widget/custom_button.dart';
-import 'package:portfolioapp/common/widget/custom_text_field.dart';
-import 'package:portfolioapp/common/widget/page_wrapper.dart';
-import 'package:portfolioapp/feature/dashboard/homeScreen/widget/home_page_topbar.dart';
-import 'package:portfolioapp/feature/rideFlow/selectTransport/select_transport_widget.dart';
+import 'package:ridesharing/app/app_drawer.dart';
+import 'package:ridesharing/common/constant/assets.dart';
+import 'package:ridesharing/common/theme.dart';
+import 'package:ridesharing/common/widget/common_dialogue_box.dart';
+import 'package:ridesharing/common/widget/custom_button.dart';
+import 'package:ridesharing/common/widget/custom_text_field.dart';
+import 'package:ridesharing/common/widget/page_wrapper.dart';
+import 'package:ridesharing/feature/dashboard/homeScreen/widget/home_page_topbar.dart';
+import 'package:ridesharing/feature/rideFlow/selectTransport/select_transport_widget.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({super.key});

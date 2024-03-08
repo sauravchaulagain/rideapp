@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/common/theme.dart';
+import 'package:ridesharing/common/theme.dart';
 
 class PoppinsTextStyles {
   // Color constants

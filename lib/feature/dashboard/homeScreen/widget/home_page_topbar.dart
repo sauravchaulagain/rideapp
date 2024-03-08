@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/common/theme.dart';
-import 'package:portfolioapp/feature/notification/notification_widget.dart';
+import 'package:ridesharing/common/theme.dart';
+import 'package:ridesharing/feature/notification/notification_widget.dart';
 
 class HomePageTopBar extends StatelessWidget {
   final Function() onTap;

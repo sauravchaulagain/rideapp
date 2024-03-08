@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/app/text_style.dart';
-import 'package:portfolioapp/common/constant/assets.dart';
-import 'package:portfolioapp/common/utils/size_utils.dart';
-import 'package:portfolioapp/common/widget/common_image.dart';
-import 'package:portfolioapp/common/widget/custom_button.dart';
+import 'package:ridesharing/app/text_style.dart';
+import 'package:ridesharing/common/constant/assets.dart';
+import 'package:ridesharing/common/utils/size_utils.dart';
+import 'package:ridesharing/common/widget/common_image.dart';
+import 'package:ridesharing/common/widget/custom_button.dart';
 
 showCommonPopUpDialog({
   required BuildContext context,

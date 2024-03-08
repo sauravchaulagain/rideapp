@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolioapp/common/constant/assets.dart';
-import 'package:portfolioapp/common/theme.dart';
-import 'package:portfolioapp/feature/dashboard/favourite/favourite_widget.dart';
-import 'package:portfolioapp/feature/dashboard/homeScreen/home_page_widget.dart';
-import 'package:portfolioapp/feature/dashboard/offer/offer_widget.dart';
-import 'package:portfolioapp/feature/dashboard/profile/profile_widget.dart';
-import 'package:portfolioapp/feature/dashboard/wallet/wallet_widget.dart';
+import 'package:ridesharing/common/constant/assets.dart';
+import 'package:ridesharing/common/theme.dart';
+import 'package:ridesharing/feature/dashboard/favourite/favourite_widget.dart';
+import 'package:ridesharing/feature/dashboard/homeScreen/home_page_widget.dart';
+import 'package:ridesharing/feature/dashboard/offer/offer_widget.dart';
+import 'package:ridesharing/feature/dashboard/profile/profile_widget.dart';
+import 'package:ridesharing/feature/dashboard/wallet/wallet_widget.dart';
 
 class DashboardWidget extends StatefulWidget {
   const DashboardWidget({super.key});

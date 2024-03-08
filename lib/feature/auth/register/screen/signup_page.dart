@@ -1,6 +1,5 @@
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:portfolioapp/feature/auth/register/widget/signup_widget.dart';
+import 'package:ridesharing/feature/auth/register/widget/signup_widget.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});

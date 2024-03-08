@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/common/theme.dart';
-import 'package:portfolioapp/common/utils/size_utils.dart';
-import 'package:portfolioapp/common/utils/snackbar_utils.dart';
-import 'package:portfolioapp/common/widget/common_container.dart';
-import 'package:portfolioapp/common/widget/common_dropdown_box.dart';
-import 'package:portfolioapp/common/widget/custom_button.dart';
-import 'package:portfolioapp/common/widget/custom_text_field.dart';
-import 'package:portfolioapp/common/widget/form_validator.dart';
-import 'package:portfolioapp/feature/auth/login/login_page.dart';
+import 'package:ridesharing/common/theme.dart';
+import 'package:ridesharing/common/utils/size_utils.dart';
+import 'package:ridesharing/common/utils/snackbar_utils.dart';
+import 'package:ridesharing/common/widget/common_container.dart';
+import 'package:ridesharing/common/widget/common_dropdown_box.dart';
+import 'package:ridesharing/common/widget/custom_button.dart';
+import 'package:ridesharing/common/widget/custom_text_field.dart';
+import 'package:ridesharing/common/widget/form_validator.dart';
+import 'package:ridesharing/feature/auth/login/login_page.dart';
 
 class SignUpWidget extends StatefulWidget {
   const SignUpWidget({super.key});

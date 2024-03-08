@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/common/theme.dart';
-import 'package:portfolioapp/common/utils/size_utils.dart';
-import 'package:portfolioapp/common/widget/common_container.dart';
-import 'package:portfolioapp/common/widget/common_list_tile.dart';
-import 'package:portfolioapp/common/widget/custom_button.dart';
+import 'package:ridesharing/common/theme.dart';
+import 'package:ridesharing/common/utils/size_utils.dart';
+import 'package:ridesharing/common/widget/common_container.dart';
+import 'package:ridesharing/common/widget/common_list_tile.dart';
+import 'package:ridesharing/common/widget/custom_button.dart';
 
 class OfferWidget extends StatefulWidget {
   const OfferWidget({super.key});

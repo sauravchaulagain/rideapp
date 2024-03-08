@@ -1,6 +1,6 @@
-import 'package:portfolioapp/common/theme.dart';
+import 'package:ridesharing/common/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/common/widget/appbar/common_appbar.dart';
+import 'package:ridesharing/common/widget/appbar/common_appbar.dart';
 
 class PageWrapper extends StatefulWidget {
   final String? appbarTitle;

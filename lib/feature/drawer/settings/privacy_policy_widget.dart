@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/app/text_style.dart';
-import 'package:portfolioapp/common/widget/common_container.dart';
+import 'package:ridesharing/app/text_style.dart';
+import 'package:ridesharing/common/widget/common_container.dart';
 
 class PrivacyPolicyWidget extends StatelessWidget {
   const PrivacyPolicyWidget({super.key});

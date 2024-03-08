@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:portfolioapp/common/constant/assets.dart';
-import 'package:portfolioapp/common/utils/permission_utils.dart';
-import 'package:portfolioapp/common/widget/page_wrapper.dart';
-import 'package:portfolioapp/feature/auth/welcomeScreen/screen/welcome_page.dart';
+import 'package:ridesharing/common/constant/assets.dart';
+import 'package:ridesharing/common/utils/permission_utils.dart';
+import 'package:ridesharing/common/widget/page_wrapper.dart';
+import 'package:ridesharing/feature/auth/welcomeScreen/screen/welcome_page.dart';
 
 import '../../common/widget/common_popup_box.dart';
 

@@ -1,7 +1,7 @@
 // import 'package:flutter/material.dart';
 // import 'package:flutter_svg/svg.dart';
-// import 'package:portfolioapp/common/constant/assets.dart';
-// import 'package:portfolioapp/common/theme.dart';
+// import 'package:ridesharing/common/constant/assets.dart';
+// import 'package:ridesharing/common/theme.dart';
 
 // class CustomBottomNavBar extends StatefulWidget {
 //   final int selectedIndex;

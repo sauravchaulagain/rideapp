@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/common/theme.dart';
-import 'package:portfolioapp/common/utils/size_utils.dart';
+import 'package:ridesharing/common/theme.dart';
+import 'package:ridesharing/common/utils/size_utils.dart';
 
 class BottomSheetWrapper extends StatelessWidget {
   final bool showCancelButton;

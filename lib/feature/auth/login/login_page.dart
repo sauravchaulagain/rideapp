@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:portfolioapp/common/theme.dart';
-import 'package:portfolioapp/common/utils/size_utils.dart';
-import 'package:portfolioapp/common/widget/common_container.dart';
-import 'package:portfolioapp/common/widget/custom_button.dart';
-import 'package:portfolioapp/common/widget/custom_text_field.dart';
-import 'package:portfolioapp/common/widget/form_validator.dart';
-import 'package:portfolioapp/feature/auth/register/screen/signup_page.dart';
-import 'package:portfolioapp/feature/dashboard/dashboard_widget.dart';
+import 'package:ridesharing/common/theme.dart';
+import 'package:ridesharing/common/utils/size_utils.dart';
+import 'package:ridesharing/common/widget/common_container.dart';
+import 'package:ridesharing/common/widget/custom_button.dart';
+import 'package:ridesharing/common/widget/custom_text_field.dart';
+import 'package:ridesharing/common/widget/form_validator.dart';
+import 'package:ridesharing/feature/auth/register/screen/signup_page.dart';
+import 'package:ridesharing/feature/dashboard/dashboard_widget.dart';
 
 class LoginWidget extends StatefulWidget {
   const LoginWidget({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:portfolioapp/common/utils/snackbar_utils.dart';
+import 'package:ridesharing/common/utils/snackbar_utils.dart';
 
 class PermissionUtils {
   static Future<bool> requestCameraPermission(BuildContext context) async {
