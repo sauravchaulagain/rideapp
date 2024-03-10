@@ -8,6 +8,15 @@ This Flutter project is a ride-sharing application designed to provide a seamles
 ## UI Design Inspiration:
 The user interface (UI) design for Ride Buddy is inspired by the "Rideshare- Ride Mobile App UI kit" available on Figma, created by the talented user @el3bd_ui. We have utilized various design elements from this UI kit to enhance the visual appeal and functionality of our application.
 
+
+## Project OverView
+
+
+### Thumbnail
+<img src= "https://github.com/sauravchaulagain/rideapp/blob/master/assets/images/Thumbnil.png?raw=true" >
+
+Image Source : https://www.figma.com/community/file/1241766699896445351
+
 ## Project Details
 - **Version**: 1.0.0+1
 - **Environment**: SDK '>=2.19.3 <3.0.0'
