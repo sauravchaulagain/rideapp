@@ -3,6 +3,11 @@
 ## Description
 This Flutter project is a ride-sharing application designed to provide a seamless user experience for connecting drivers with passengers. The UI design for this app is inspired by the "Rideshare- Ride Mobile App UI kit" available on Figma, created by user @el3bd_ui. You can find the design [here](https://www.figma.com/community/file/1241766699896445351).
 
+
+
+## UI Design Inspiration:
+The user interface (UI) design for Ride Buddy is inspired by the "Rideshare- Ride Mobile App UI kit" available on Figma, created by the talented user @el3bd_ui. We have utilized various design elements from this UI kit to enhance the visual appeal and functionality of our application.
+
 ## Project Details
 - **Version**: 1.0.0+1
 - **Environment**: SDK '>=2.19.3 <3.0.0'
@@ -50,8 +55,6 @@ flutter:
 - Open the app and explore the intuitive ride-sharing interface inspired by the Figma design.
 - Experience a visually appealing and user-friendly design that enhances the ride-sharing experience.
 
-## Working
-Users can register/login in the app (login function implemented using Firebase). The application fetches data from local storage using APIs and presents it to the user. Users can also hire a gardener from the application, with details stored in the database.
 
 ## Software & Tools Used
 - Flutter SDK
